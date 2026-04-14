@@ -1,0 +1,3104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xcera OS — The Agentic AI Operating System | HUC Architecture</title>
+    <meta name="description" content="Explore Heterogeneous Unified Computing (HUC) and the Xcera Agentic Operating System — the next-generation paradigm for AI-native computing.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+/* ================================================================
+   XCERA OS — ULTRA ADVANCED CINEMATIC INTERFACE
+   Design: Glassmorphism + Holographic + Neural Network Aesthetics
+   ================================================================ */
+
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#030712;--bg2:#0a0f1e;--bg3:#0f1629;
+  --text:#e2e8f0;--text-dim:#64748b;--text-bright:#f8fafc;
+  --cyan:#00d4ff;--cyan-dim:rgba(0,212,255,0.08);
+  --purple:#a855f7;--purple-dim:rgba(168,85,247,0.08);
+  --pink:#ec4899;--pink-dim:rgba(236,72,153,0.08);
+  --green:#10b981;--amber:#f59e0b;--red:#ef4444;
+  --grad1:linear-gradient(135deg,#00d4ff,#a855f7);
+  --grad2:linear-gradient(135deg,#a855f7,#ec4899);
+  --grad3:linear-gradient(135deg,#10b981,#00d4ff);
+  --glass:rgba(255,255,255,0.02);
+  --glass-strong:rgba(255,255,255,0.04);
+  --glass-border:rgba(255,255,255,0.06);
+  --glass-border-hover:rgba(0,212,255,0.15);
+  --nav-h:64px;--section-pad:120px 5vw;
+  --ease-out-expo:cubic-bezier(0.16,1,0.3,1);
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+}
+
+html{scroll-behavior:smooth;font-size:16px;cursor:none}
+body{
+  font-family:'Inter',sans-serif;background:var(--bg);
+  color:var(--text);overflow-x:hidden;line-height:1.7;
+  cursor:none;
+}
+h1,h2,h3,h4{font-family:'Orbitron',sans-serif;font-weight:700;line-height:1.2}
+a{color:inherit;text-decoration:none;cursor:none}
+button{cursor:none}
+::selection{background:rgba(0,212,255,.3);color:#fff}
+
+/* ===== AI CURSOR SYSTEM ===== */
+#ai-cursor{
+  position:fixed;top:0;left:0;z-index:10000;pointer-events:none;
+  mix-blend-mode:screen;
+}
+.cursor-core{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 20px var(--cyan),0 0 60px rgba(0,212,255,0.3);
+  position:absolute;top:-4px;left:-4px;
+  transition:transform 0.15s var(--ease-spring),width 0.3s,height 0.3s,border-radius 0.3s;
+}
+.cursor-ring{
+  width:36px;height:36px;border-radius:50%;
+  border:1.5px solid rgba(0,212,255,0.4);
+  position:absolute;top:-18px;left:-18px;
+  transition:transform 0.4s var(--ease-out-expo),width 0.3s,height 0.3s,border-color 0.3s,opacity 0.3s;
+}
+.cursor-ring-outer{
+  width:60px;height:60px;border-radius:50%;
+  border:1px solid rgba(0,212,255,0.1);
+  position:absolute;top:-30px;left:-30px;
+  transition:transform 0.6s var(--ease-out-expo),width 0.4s,height 0.4s,opacity 0.4s;
+  opacity:0;
+}
+/* Cursor states */
+body.cursor-hover .cursor-core{
+  transform:scale(2.5);
+  background:var(--purple);
+  box-shadow:0 0 30px var(--purple),0 0 80px rgba(168,85,247,0.4);
+}
+body.cursor-hover .cursor-ring{
+  width:52px;height:52px;top:-26px;left:-26px;
+  border-color:rgba(168,85,247,0.5);
+}
+body.cursor-hover .cursor-ring-outer{
+  opacity:1;
+  width:80px;height:80px;top:-40px;left:-40px;
+  border-color:rgba(168,85,247,0.15);
+}
+body.cursor-click .cursor-core{
+  transform:scale(0.5);
+}
+
+/* Cursor trail canvas */
+#cursor-trail-canvas{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  z-index:9999;pointer-events:none;
+}
+
+/* ===== THREE.JS NEURAL CANVAS ===== */
+#neural-canvas{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  z-index:0;pointer-events:none;opacity:0.7;
+}
+
+/* ===== PARALLAX LAYERS ===== */
+.parallax-layer{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+}
+.grid-overlay{
+  width:100%;height:100%;
+  background-image:
+    linear-gradient(rgba(0,212,255,.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,212,255,.02) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,black,transparent);
+}
+
+/* Floating orbs (parallax mid layer) */
+.floating-orb{
+  position:absolute;border-radius:50%;filter:blur(80px);
+  animation:orbFloat 20s ease-in-out infinite;
+}
+.orb-1{
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(0,212,255,0.08),transparent 60%);
+  top:10%;left:20%;
+}
+.orb-2{
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(168,85,247,0.06),transparent 60%);
+  top:50%;right:10%;
+  animation-delay:-7s;animation-duration:25s;
+}
+.orb-3{
+  width:350px;height:350px;
+  background:radial-gradient(circle,rgba(236,72,153,0.05),transparent 60%);
+  bottom:20%;left:50%;
+  animation-delay:-14s;animation-duration:30s;
+}
+@keyframes orbFloat{
+  0%,100%{transform:translateY(0) translateX(0)}
+  25%{transform:translateY(-30px) translateX(20px)}
+  50%{transform:translateY(15px) translateX(-25px)}
+  75%{transform:translateY(-20px) translateX(15px)}
+}
+
+/* ===== VOLUMETRIC LIGHT ===== */
+.volumetric-light{
+  position:fixed;pointer-events:none;z-index:1;
+  border-radius:50%;filter:blur(120px);
+  mix-blend-mode:screen;opacity:0.4;
+}
+.vl-1{
+  width:800px;height:400px;
+  background:linear-gradient(135deg,rgba(0,212,255,0.05),rgba(168,85,247,0.03));
+  top:-10%;left:-10%;
+  animation:vlPulse 8s ease-in-out infinite;
+}
+.vl-2{
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(168,85,247,0.04),transparent 70%);
+  bottom:-20%;right:-10%;
+  animation:vlPulse 12s ease-in-out infinite;animation-delay:-4s;
+}
+@keyframes vlPulse{
+  0%,100%{opacity:0.3;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(1.1)}
+}
+
+/* ===== NAVIGATION ===== */
+#main-nav{
+  position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;z-index:1000;
+  background:rgba(3,7,18,0.6);
+  backdrop-filter:blur(30px) saturate(1.5);
+  border-bottom:1px solid var(--glass-border);
+  transition:transform 0.5s var(--ease-out-expo),background 0.3s;
+}
+#main-nav.hidden{transform:translateY(-120%)}
+.nav-brand{display:flex;align-items:center;gap:0.6rem}
+.brand-logo{display:flex;align-items:center}
+.brand-text{
+  font-family:'Orbitron',sans-serif;font-weight:800;font-size:1.1rem;
+  letter-spacing:4px;
+  background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.brand-version{
+  font-family:'Orbitron',sans-serif;font-size:0.55rem;
+  color:var(--text-dim);letter-spacing:3px;
+  border:1px solid var(--glass-border);
+  padding:0.1rem 0.4rem;border-radius:4px;
+  margin-left:-0.2rem;
+}
+.nav-links{display:flex;gap:0.15rem}
+.nav-link{
+  position:relative;padding:0.5rem 0.7rem;
+  font-size:0.65rem;text-transform:uppercase;letter-spacing:1.5px;
+  color:var(--text-dim);border-radius:8px;
+  transition:all 0.4s var(--ease-out-expo);font-weight:500;
+  overflow:hidden;
+}
+.nav-link::before{
+  content:'';position:absolute;inset:0;border-radius:8px;
+  background:rgba(0,212,255,0.06);opacity:0;
+  transition:opacity 0.3s;
+}
+.nav-link:hover::before,.nav-link.active::before{opacity:1}
+.nav-link:hover .nav-link-text,.nav-link.active .nav-link-text{color:var(--cyan)}
+.nav-link-text{position:relative;z-index:1;transition:color 0.3s}
+.nav-link-indicator{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:0;height:2px;background:var(--grad1);border-radius:2px;
+  transition:width 0.4s var(--ease-out-expo);
+}
+.nav-link.active .nav-link-indicator{width:60%}
+
+.nav-status{display:flex;align-items:center;gap:0.5rem}
+.status-ring{display:flex;align-items:center}
+.status-ring-fill{animation:statusRotate 3s linear infinite;transform-origin:center}
+@keyframes statusRotate{to{transform:rotate(360deg)}}
+.status-text{
+  font-size:0.6rem;letter-spacing:2px;color:var(--green);
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* ===== GRADIENT TEXTS ===== */
+.gradient-text{background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.gradient-text-alt{background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.gradient-text-warn{background:linear-gradient(135deg,var(--amber),var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* ===== HOLOGRAPHIC CARD SYSTEM ===== */
+.holographic-card{
+  position:relative;overflow:hidden;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  backdrop-filter:blur(20px) saturate(1.3);
+  transition:all 0.5s var(--ease-out-expo);
+}
+.holographic-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(0,212,255,0.03) 0%,
+    transparent 40%,
+    rgba(168,85,247,0.02) 60%,
+    transparent 100%
+  );
+  opacity:0;transition:opacity 0.5s;pointer-events:none;
+}
+.holographic-card:hover::before{opacity:1}
+.holographic-card:hover{
+  border-color:var(--glass-border-hover);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.3),
+    0 0 0 1px rgba(0,212,255,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+}
+/* Holographic shimmer effect */
+.holo-shimmer{
+  position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.02),
+    transparent
+  );
+  transform:skewX(-20deg);
+  transition:left 0.8s var(--ease-out-expo);
+  pointer-events:none;z-index:1;
+}
+.holographic-card:hover .holo-shimmer{left:200%}
+
+/* ===== SECTIONS ===== */
+.section{position:relative;padding:var(--section-pad);min-height:100vh;z-index:2}
+.section-header{text-align:center;margin-bottom:5rem}
+.section-number{
+  font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:4px;
+  color:var(--cyan);display:block;margin-bottom:0.75rem;opacity:0.5;
+}
+.section-title{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:1rem}
+.section-desc{max-width:640px;margin:0 auto;color:var(--text-dim);font-size:1rem}
+
+/* ===== HERO ===== */
+.hero-section{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:100vh;text-align:center;padding-top:var(--nav-h);position:relative;
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,212,255,.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 60% 50% at 50% 50%,black,transparent);
+  animation:gridPulse 4s ease-in-out infinite;
+}
+@keyframes gridPulse{
+  0%,100%{opacity:0.5}50%{opacity:1}
+}
+.hero-ambient-glow{
+  position:absolute;top:20%;left:50%;transform:translateX(-50%);
+  width:800px;height:500px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(0,212,255,0.06) 0%,rgba(168,85,247,0.03) 40%,transparent 70%);
+  filter:blur(40px);pointer-events:none;
+  animation:ambientGlow 6s ease-in-out infinite;
+}
+@keyframes ambientGlow{
+  0%,100%{opacity:0.6;transform:translateX(-50%) scale(1)}
+  50%{opacity:1;transform:translateX(-50%) scale(1.05)}
+}
+
+.hero-content{position:relative;z-index:3}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:0.7rem;
+  padding:0.5rem 1.4rem;border-radius:50px;
+  background:rgba(0,212,255,0.05);
+  border:1px solid rgba(0,212,255,0.12);
+  font-size:0.65rem;letter-spacing:3px;color:var(--cyan);
+  margin-bottom:2rem;font-family:'JetBrains Mono',monospace;
+  backdrop-filter:blur(10px);
+}
+.badge-ai-dots{display:flex;gap:3px}
+.badge-ai-dots span{
+  width:4px;height:4px;border-radius:50%;background:var(--cyan);
+  animation:aiDots 1.5s ease-in-out infinite;
+}
+.badge-ai-dots span:nth-child(2){animation-delay:0.2s}
+.badge-ai-dots span:nth-child(3){animation-delay:0.4s}
+@keyframes aiDots{0%,100%{opacity:0.3;transform:scale(0.8)}50%{opacity:1;transform:scale(1.2)}}
+
+.hero-title{font-size:clamp(2.5rem,6vw,5rem);margin-bottom:1.5rem}
+.title-line{
+  display:block;opacity:0;transform:translateY(40px);
+  animation:heroFadeUp 1s var(--ease-out-expo) forwards;
+}
+.title-line[data-delay="1"]{animation-delay:0.15s}
+.title-line[data-delay="2"]{animation-delay:0.3s}
+@keyframes heroFadeUp{
+  to{opacity:1;transform:translateY(0)}
+}
+.hero-subtitle{
+  max-width:700px;margin:0 auto 2rem;color:var(--text-dim);font-size:1.1rem;
+  opacity:0;animation:heroFadeUp 1s var(--ease-out-expo) 0.5s forwards;
+}
+
+/* AI Thinking bar */
+.ai-thinking-bar{
+  display:inline-flex;align-items:center;gap:0.8rem;
+  padding:0.4rem 1.2rem;border-radius:30px;
+  background:rgba(168,85,247,0.06);
+  border:1px solid rgba(168,85,247,0.1);
+  margin-bottom:2.5rem;
+  opacity:0;animation:heroFadeUp 1s var(--ease-out-expo) 0.6s forwards;
+}
+.ai-thinking-bar span{
+  font-size:0.65rem;letter-spacing:2px;color:var(--purple);
+  font-family:'JetBrains Mono',monospace;
+}
+.thinking-pulse{
+  width:24px;height:3px;border-radius:2px;
+  background:var(--grad2);
+  animation:thinkingPulse 2s ease-in-out infinite;
+}
+@keyframes thinkingPulse{
+  0%,100%{width:24px;opacity:0.5}50%{width:40px;opacity:1}
+}
+
+.hero-stats{
+  display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;
+  opacity:0;animation:heroFadeUp 1s var(--ease-out-expo) 0.7s forwards;
+}
+.stat-card{
+  border-radius:16px;padding:1.3rem 1.8rem;min-width:150px;
+  transition:all 0.5s var(--ease-out-expo);
+}
+.stat-card:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 12px 40px rgba(0,212,255,0.08);
+}
+.stat-value{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:800;color:var(--text-bright)}
+.stat-unit{font-family:'Orbitron',sans-serif;font-size:0.9rem;color:var(--cyan);margin-left:2px}
+.stat-label{display:block;font-size:0.65rem;color:var(--text-dim);margin-top:0.3rem;letter-spacing:1px}
+
+.hero-cta{
+  display:flex;gap:1rem;justify-content:center;
+  opacity:0;animation:heroFadeUp 1s var(--ease-out-expo) 0.85s forwards;
+}
+.btn-primary{
+  position:relative;display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.9rem 2.2rem;background:var(--grad1);border-radius:12px;
+  font-weight:600;font-size:0.9rem;color:var(--bg);
+  transition:all 0.4s var(--ease-out-expo);
+  overflow:hidden;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,212,255,0.3)}
+.btn-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(255,255,255,0.2),transparent 60%);
+  opacity:0;transition:opacity 0.4s;
+}
+.btn-primary:hover .btn-glow{opacity:1}
+.btn-text{position:relative;z-index:1}
+.btn-primary svg{position:relative;z-index:1}
+
+.btn-secondary{
+  position:relative;padding:0.9rem 2.2rem;border-radius:12px;
+  font-weight:600;font-size:0.9rem;
+  border:1px solid var(--glass-border);color:var(--text);
+  transition:all 0.4s var(--ease-out-expo);overflow:hidden;
+}
+.btn-secondary:hover{
+  border-color:var(--cyan);color:var(--cyan);
+  transform:translateY(-3px);
+  box-shadow:0 8px 30px rgba(0,212,255,0.08);
+}
+.btn-border-glow{
+  position:absolute;inset:-1px;border-radius:13px;
+  background:var(--grad1);opacity:0;
+  transition:opacity 0.4s;z-index:-1;
+  filter:blur(8px);
+}
+.btn-secondary:hover .btn-border-glow{opacity:0.15}
+
+.scroll-indicator{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+  font-size:0.55rem;letter-spacing:3px;color:var(--text-dim);
+  opacity:0;animation:heroFadeUp 1s var(--ease-out-expo) 1.2s forwards;
+  font-family:'JetBrains Mono',monospace;
+}
+.scroll-line{
+  width:1px;height:40px;
+  background:linear-gradient(transparent,var(--cyan),transparent);
+  animation:scrollPulse 2.5s ease-in-out infinite;
+}
+@keyframes scrollPulse{0%,100%{opacity:0.2;height:30px}50%{opacity:1;height:50px}}
+
+/* ===== ARCHITECTURE DIAGRAM ===== */
+.architecture-diagram{
+  position:relative;display:flex;flex-direction:column;align-items:center;
+  padding:4rem 0;margin-bottom:4rem;
+}
+.arch-center{position:relative;margin-bottom:3rem}
+.upm-core{
+  position:relative;width:220px;height:220px;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+}
+.upm-inner{text-align:center;z-index:2;position:relative}
+.upm-label{
+  font-family:'Orbitron',sans-serif;font-size:1.8rem;font-weight:800;
+  color:var(--cyan);display:block;
+  text-shadow:0 0 30px rgba(0,212,255,0.3);
+}
+.upm-sublabel{font-size:0.6rem;color:var(--text-dim);letter-spacing:2px;display:block;margin-top:0.3rem}
+.upm-ring{
+  position:absolute;border-radius:50%;border:1px solid;
+  top:50%;left:50%;transform:translate(-50%,-50%);
+}
+.ring-1{
+  width:140px;height:140px;border-color:rgba(0,212,255,0.2);
+  animation:ringRotate 15s linear infinite;
+}
+.ring-2{
+  width:180px;height:180px;border-color:rgba(168,85,247,0.15);
+  animation:ringRotate 22s linear infinite reverse;
+}
+.ring-3{
+  width:220px;height:220px;border-color:rgba(236,72,153,0.1);
+  animation:ringRotate 30s linear infinite;
+}
+@keyframes ringRotate{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.data-flow-canvas{
+  position:absolute;inset:-50px;width:calc(100% + 100px);height:calc(100% + 100px);
+  pointer-events:none;
+}
+.arch-nodes{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:900px;width:100%}
+.arch-node{
+  border-radius:16px;padding:1.5rem;text-align:center;
+  transition:all 0.5s var(--ease-out-expo);cursor:default;position:relative;
+}
+.arch-node:hover{transform:translateY(-8px) scale(1.02)}
+.node-icon{
+  font-family:'Orbitron',sans-serif;font-size:1.3rem;font-weight:800;
+  color:var(--cyan);margin-bottom:0.5rem;
+  text-shadow:0 0 15px rgba(0,212,255,0.3);
+}
+.node-label{font-size:0.7rem;color:var(--text-dim);letter-spacing:1px}
+.node-pulse-ring{
+  position:absolute;inset:-2px;border-radius:18px;border:1px solid var(--cyan);
+  opacity:0;animation:nodePulse 3s ease-out infinite;pointer-events:none;
+}
+@keyframes nodePulse{
+  0%{opacity:0.3;inset:-2px}
+  100%{opacity:0;inset:-15px}
+}
+.arch-fabric{
+  display:flex;align-items:center;gap:1rem;
+  margin-top:2rem;padding:0.6rem 1.5rem;border-radius:8px;
+  color:var(--text-dim);font-size:0.7rem;
+  font-family:'JetBrains Mono',monospace;letter-spacing:2px;
+}
+.fabric-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0.3}
+
+/* ===== SUBSECTIONS ===== */
+.subsection{margin-top:5rem}
+.subsection-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.subsection-title-center{text-align:center;font-size:1.5rem;margin-bottom:2.5rem}
+.subsection h3{font-size:1.5rem;margin-bottom:1rem}
+.subsection p{color:var(--text-dim);margin-bottom:1rem}
+.feature-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem}
+.chip{
+  padding:0.35rem 0.9rem;border-radius:20px;font-size:0.65rem;letter-spacing:1px;
+  background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.12);
+  color:var(--cyan);transition:all 0.4s var(--ease-out-expo);
+  font-family:'JetBrains Mono',monospace;
+}
+.chip:hover{
+  background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.3);
+  transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,212,255,0.08);
+}
+
+/* ===== MEMORY FLOW ===== */
+.memory-flow-diagram{
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+  flex-wrap:wrap;position:relative;padding:2rem;
+}
+.mem-block{
+  padding:1rem 1.5rem;border-radius:14px;font-family:'Orbitron',sans-serif;
+  font-size:0.8rem;font-weight:700;text-align:center;
+  border:1px solid var(--glass-border);background:var(--glass);
+  position:relative;min-width:80px;
+  transition:all 0.4s var(--ease-out-expo);
+}
+.mem-block:hover{transform:scale(1.05);border-color:var(--glass-border-hover)}
+.mem-shared{
+  background:rgba(0,212,255,0.05);border-color:rgba(0,212,255,0.2);
+  padding:1.5rem 2rem;
+}
+.mem-shared .mem-pulse{
+  position:absolute;inset:-4px;border-radius:18px;
+  border:1px solid var(--cyan);animation:memPulse 3s infinite;opacity:0;
+}
+@keyframes memPulse{0%{opacity:0;transform:scale(1)}50%{opacity:0.2}100%{opacity:0;transform:scale(1.06)}}
+.mem-arrow{
+  width:40px;height:2px;background:var(--grad1);position:relative;overflow:visible;
+}
+.mem-arrow-particle{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 10px var(--cyan);
+  top:-2px;animation:arrowParticle 2s ease-in-out infinite;
+}
+@keyframes arrowParticle{
+  0%{left:-6px;opacity:0}20%{opacity:1}80%{opacity:1}100%{left:40px;opacity:0}
+}
+
+/* ===== COMPARISON TABLE ===== */
+.comparison-table{border-radius:16px;overflow:hidden}
+.table-header{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;padding:1rem 1.5rem;
+  border-bottom:1px solid var(--glass-border);font-family:'JetBrains Mono',monospace;
+  font-size:0.6rem;letter-spacing:2px;color:var(--text-dim);
+}
+.table-header .highlight{color:var(--cyan)}
+.table-row{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;padding:0.8rem 1.5rem;
+  border-bottom:1px solid rgba(255,255,255,0.02);
+  transition:all 0.4s var(--ease-out-expo);font-size:0.85rem;
+}
+.table-row:hover{background:rgba(0,212,255,0.02)}
+.table-row:last-child{border-bottom:none}
+.td.label{font-weight:600;color:var(--text-bright)}
+.td.old{color:var(--text-dim)}
+.td.mid{color:var(--amber)}
+.td.new{color:var(--cyan);font-weight:600}
+
+/* ===== ROUTING ENGINE ===== */
+.routing-engine{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center;
+  margin-bottom:4rem;max-width:1000px;margin-left:auto;margin-right:auto;
+}
+.routing-input{display:flex;align-items:center}
+.input-prompt{
+  display:flex;align-items:center;gap:0.8rem;padding:1rem 1.5rem;
+  border-radius:14px;width:100%;
+}
+.prompt-icon{color:var(--green);font-size:1.2rem}
+.prompt-text{
+  font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text-dim);
+  flex:1;
+}
+.prompt-typing-cursor{
+  width:2px;height:14px;background:var(--cyan);
+  animation:typingBlink 1s step-end infinite;
+}
+@keyframes typingBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+.routing-center{position:relative}
+.router-core{
+  position:relative;width:130px;height:130px;display:flex;align-items:center;
+  justify-content:center;border-radius:50%;
+  background:radial-gradient(circle,rgba(168,85,247,0.1),rgba(168,85,247,0.03));
+  border:1px solid rgba(168,85,247,0.2);
+}
+.router-label{
+  text-align:center;font-family:'Orbitron',sans-serif;font-size:0.55rem;
+  letter-spacing:1px;color:var(--purple);z-index:2;position:relative;
+  line-height:1.5;
+}
+.router-ring{
+  position:absolute;inset:-12px;border-radius:50%;
+  border:1px solid rgba(168,85,247,0.1);
+  animation:ringRotate 10s linear infinite;
+}
+.router-ring-2{
+  inset:-24px;border-color:rgba(168,85,247,0.05);
+  animation-duration:16s;animation-direction:reverse;
+}
+
+.routing-outputs{display:flex;flex-direction:column;gap:1rem}
+.route-path{
+  display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;
+  border-radius:14px;transition:all 0.5s var(--ease-out-expo);
+}
+.route-path:hover{transform:translateX(6px)}
+.route-icon{font-size:1.5rem}
+.route-info h4{font-size:0.8rem;font-family:'Orbitron',sans-serif;margin-bottom:0.2rem}
+.route-info p{font-size:0.65rem;color:var(--text-dim)}
+.route-tag{
+  font-size:0.55rem;padding:0.15rem 0.5rem;border-radius:10px;
+  background:rgba(0,212,255,0.06);color:var(--cyan);
+  letter-spacing:1px;display:inline-block;margin-top:0.3rem;
+  font-family:'JetBrains Mono',monospace;
+}
+.route-bar{height:3px;background:rgba(255,255,255,0.03);border-radius:2px;margin-top:0.5rem;overflow:hidden}
+.route-fill{
+  height:100%;background:var(--grad1);border-radius:2px;width:var(--fill);
+  animation:fillBar 2s var(--ease-out-expo) forwards;
+}
+@keyframes fillBar{from{width:0}}
+
+/* ===== FAILOVER ===== */
+.failover-diagram{border-radius:20px;padding:3rem}
+.failover-diagram h3{text-align:center;margin-bottom:2rem;font-size:1.3rem}
+.failover-flow{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.failover-step{
+  background:var(--bg2);border:1px solid var(--glass-border);border-radius:14px;
+  padding:1.2rem;text-align:center;min-width:180px;
+  transition:all 0.5s var(--ease-out-expo);
+}
+.failover-step:hover{border-color:var(--glass-border-hover);transform:translateY(-6px)}
+.step-num{
+  width:32px;height:32px;border-radius:50%;background:var(--grad1);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 0.8rem;
+  font-family:'Orbitron',sans-serif;font-size:0.8rem;font-weight:700;color:var(--bg);
+}
+.step-content h4{font-size:0.8rem;margin-bottom:0.3rem;font-family:'Orbitron',sans-serif}
+.step-content p{font-size:0.65rem;color:var(--text-dim)}
+.step-final{border-color:rgba(16,185,129,0.2)}
+.step-final .step-num{background:var(--grad3)}
+.failover-connector{
+  width:30px;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  flex-shrink:0;position:relative;overflow:visible;
+}
+.connector-particle{
+  position:absolute;width:4px;height:4px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 8px var(--cyan);
+  top:-1px;animation:arrowParticle 1.5s ease-in-out infinite;
+}
+
+/* ===== OS STACK ===== */
+.os-stack{
+  max-width:700px;margin:0 auto 4rem;display:flex;flex-direction:column;align-items:center;
+}
+.stack-layer{
+  width:100%;padding:1.5rem 2rem;border-radius:16px;
+  cursor:pointer;transition:all 0.5s var(--ease-out-expo);position:relative;
+}
+.stack-layer::after{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px;
+}
+.layer-app::after{background:var(--grad1)}
+.layer-perception::after{background:var(--cyan)}
+.layer-agent::after{background:var(--purple)}
+.layer-memory::after{background:var(--amber)}
+.layer-kernel::after{background:var(--green)}
+.layer-hw::after{background:var(--pink)}
+.stack-layer:hover{
+  transform:scale(1.02) translateX(4px);
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+}
+.layer-content{display:flex;align-items:center;gap:1rem}
+.layer-icon{font-size:1.5rem}
+.layer-content h4{font-size:0.85rem;font-family:'Orbitron',sans-serif}
+.layer-content p{font-size:0.65rem;color:var(--text-dim)}
+.layer-detail{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.6s var(--ease-out-expo),padding 0.6s;padding-left:3rem;
+}
+.stack-layer.expanded .layer-detail{max-height:120px;margin-top:0.8rem}
+.layer-detail p{font-size:0.8rem;color:var(--text-dim)}
+.layer-depth-indicator{
+  position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);
+  width:6px;height:6px;border-radius:50%;border:1px solid var(--glass-border);
+  transition:all 0.3s;
+}
+.stack-layer.expanded .layer-depth-indicator{
+  background:var(--cyan);border-color:var(--cyan);
+  box-shadow:0 0 10px var(--cyan);
+}
+.stack-connector{width:2px;height:20px;position:relative}
+.stack-connector::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(var(--glass-border),rgba(0,212,255,0.15));
+}
+.connector-pulse{
+  position:absolute;width:4px;height:4px;border-radius:50%;
+  background:var(--cyan);left:-1px;
+  animation:connectorPulse 2s ease-in-out infinite;
+  box-shadow:0 0 8px var(--cyan);
+}
+@keyframes connectorPulse{
+  0%{top:-4px;opacity:0}50%{opacity:1}100%{top:20px;opacity:0}
+}
+
+/* ===== MEMORY GRID ===== */
+.memory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.memory-card{border-radius:16px;padding:1.5rem;transition:all 0.5s var(--ease-out-expo)}
+.memory-card:hover{transform:translateY(-8px) scale(1.01)}
+.memory-icon{font-size:2rem;margin-bottom:0.8rem}
+.memory-card h4{font-family:'Orbitron',sans-serif;font-size:0.85rem;margin-bottom:0.4rem}
+.memory-role{font-size:0.7rem;color:var(--cyan);margin-bottom:0.5rem;font-family:'JetBrains Mono',monospace}
+.memory-impl{font-size:0.8rem;color:var(--text-dim)}
+.memory-bar{height:3px;background:rgba(255,255,255,0.03);border-radius:2px;margin-top:1rem;overflow:hidden}
+.memory-fill{
+  height:100%;width:0;border-radius:2px;background:var(--fill-color);
+  transition:width 1.5s var(--ease-out-expo);
+}
+
+/* ===== AUTOMATION DEMO ===== */
+.automation-demo{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:center;margin-bottom:4rem}
+.demo-screen{border-radius:16px;overflow:hidden}
+.screen-header{
+  display:flex;align-items:center;gap:1rem;padding:0.8rem 1rem;
+  border-bottom:1px solid var(--glass-border);background:rgba(255,255,255,0.01);
+}
+.screen-dots{display:flex;gap:6px}
+.screen-dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.screen-dots span:first-child{background:rgba(239,68,68,0.7)}
+.screen-dots span:nth-child(2){background:rgba(245,158,11,0.7)}
+.screen-dots span:nth-child(3){background:rgba(16,185,129,0.7)}
+.screen-title{font-size:0.65rem;color:var(--text-dim);letter-spacing:1px;flex:1}
+.screen-status{display:flex;align-items:center}
+.screen-fps{
+  font-size:0.55rem;color:var(--green);font-family:'JetBrains Mono',monospace;
+  letter-spacing:1px;
+}
+.screen-content{position:relative;padding:2rem;min-height:280px;overflow:hidden}
+.demo-elements{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.demo-element{
+  padding:0.8rem 1rem;border-radius:10px;background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.04);font-size:0.8rem;color:var(--text-dim);
+  position:relative;transition:all 0.5s var(--ease-out-expo);
+}
+.bbox{
+  position:absolute;inset:-3px;border:2px solid var(--cyan);border-radius:12px;
+  opacity:0;transition:opacity 0.4s;pointer-events:none;
+}
+.demo-element:hover .bbox{opacity:1}
+.demo-element:hover::after{
+  content:attr(data-label);position:absolute;top:-30px;left:0;
+  padding:3px 10px;background:var(--cyan);color:var(--bg);font-size:0.55rem;
+  border-radius:6px;font-family:'JetBrains Mono',monospace;white-space:nowrap;
+}
+.mini-chart{display:flex;align-items:flex-end;gap:4px;height:60px}
+.mini-chart .bar{
+  width:16px;background:var(--grad1);border-radius:3px 3px 0 0;
+  animation:barGrow 1.2s var(--ease-out-expo) forwards;
+}
+@keyframes barGrow{from{height:0!important}}
+/* AI scan line effect */
+.ai-scan-line{
+  position:absolute;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  box-shadow:0 0 20px var(--cyan),0 0 60px rgba(0,212,255,0.3);
+  animation:scanLine 4s ease-in-out infinite;opacity:0.5;
+  pointer-events:none;
+}
+@keyframes scanLine{
+  0%{top:0;opacity:0}10%{opacity:0.5}90%{opacity:0.5}100%{top:100%;opacity:0}
+}
+.info-step{
+  padding:1rem;border-left:2px solid var(--glass-border);margin-bottom:1rem;
+  transition:all 0.5s var(--ease-out-expo);
+}
+.info-step.active{border-left-color:var(--cyan)}
+.step-indicator{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem}
+.step-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--glass-border);
+  transition:all 0.5s var(--ease-out-expo);
+}
+.info-step.active .step-dot{
+  background:var(--cyan);box-shadow:0 0 12px var(--cyan);
+}
+.step-indicator span{
+  font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:2px;
+  color:var(--text-dim);transition:color 0.3s;
+}
+.info-step.active .step-indicator span{color:var(--cyan)}
+.info-step p{font-size:0.8rem;color:var(--text-dim)}
+
+/* ===== LEARNING FLOW ===== */
+.learning-flow{border-radius:20px;padding:3rem}
+.learning-flow h3{text-align:center;margin-bottom:2rem;font-size:1.2rem}
+.learning-steps{display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap}
+.learn-step{text-align:center;padding:1.2rem;min-width:160px;transition:all 0.5s var(--ease-out-expo)}
+.learn-step:hover{transform:translateY(-4px)}
+.learn-icon{font-size:2rem;margin-bottom:0.5rem}
+.learn-step h4{font-size:0.75rem;font-family:'Orbitron',sans-serif;margin-bottom:0.3rem}
+.learn-step p{font-size:0.65rem;color:var(--text-dim)}
+.learn-arrow{font-family:'Orbitron',sans-serif;font-size:1.2rem;color:var(--cyan)}
+
+/* ===== BIOS / CHIP ===== */
+.bios-visual{display:flex;flex-direction:column;align-items:center;gap:3rem;margin-bottom:4rem}
+.chip-diagram{position:relative}
+.chip-body{
+  width:220px;height:220px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.chip-core{text-align:center;z-index:2;position:relative}
+.chip-label{
+  font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:800;color:var(--cyan);
+  display:block;letter-spacing:3px;
+  text-shadow:0 0 20px rgba(0,212,255,0.4);
+}
+.chip-sub{font-size:0.5rem;color:var(--text-dim);letter-spacing:1px;display:block;margin-top:0.3rem}
+.chip-circuit-lines{position:absolute;inset:0;pointer-events:none;z-index:1}
+.circuit-line{
+  stroke:rgba(0,212,255,0.15);stroke-width:1;
+  stroke-dasharray:3 3;
+  animation:circuitPulse 3s ease-in-out infinite;
+}
+@keyframes circuitPulse{0%,100%{opacity:0.3}50%{opacity:0.8}}
+
+.registers{display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:center;max-width:600px}
+.register{
+  padding:0.6rem 1.2rem;border-radius:10px;background:var(--glass);
+  border:1px solid var(--glass-border);display:flex;flex-direction:column;
+  align-items:center;min-width:100px;transition:all 0.5s var(--ease-out-expo);cursor:default;
+}
+.register:hover{border-color:var(--glass-border-hover);transform:translateY(-3px)}
+.register.highlight{border-color:rgba(168,85,247,0.3);background:rgba(168,85,247,0.05)}
+.reg-name{font-family:'Orbitron',sans-serif;font-size:0.8rem;font-weight:700;color:var(--cyan)}
+.register.highlight .reg-name{color:var(--purple)}
+.reg-func{font-size:0.6rem;color:var(--text-dim);margin-top:0.2rem}
+.boot-sequence{display:flex;flex-direction:column;gap:0.5rem}
+.boot-step{
+  display:flex;align-items:center;gap:1rem;padding:0.6rem 1rem;border-radius:10px;
+  background:var(--glass);border:1px solid var(--glass-border);
+  transition:all 0.5s var(--ease-out-expo);font-size:0.8rem;
+}
+.boot-step:hover{border-color:var(--glass-border-hover);transform:translateX(6px)}
+.boot-tag{
+  font-family:'JetBrains Mono',monospace;font-size:0.55rem;font-weight:700;color:var(--cyan);
+  background:rgba(0,212,255,0.06);padding:0.2rem 0.5rem;border-radius:4px;
+  min-width:40px;text-align:center;letter-spacing:1px;
+}
+
+/* ===== PERFORMANCE ===== */
+.perf-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-bottom:4rem}
+.metric-card{border-radius:16px;padding:2rem;text-align:center;transition:all 0.5s var(--ease-out-expo)}
+.metric-card:hover{transform:translateY(-8px)}
+.metric-ring{position:relative;width:120px;height:120px;margin:0 auto 1.5rem}
+.metric-ring svg{transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:rgba(255,255,255,0.03);stroke-width:6}
+.ring-fill{
+  fill:none;stroke:url(#ringGradDef);stroke-width:6;stroke-linecap:round;
+  stroke-dasharray:339.292;stroke-dashoffset:339.292;
+  transition:stroke-dashoffset 2.5s var(--ease-out-expo);
+}
+.metric-value{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;color:var(--cyan);
+}
+.metric-card h4{font-size:0.8rem;font-family:'Orbitron',sans-serif;margin-bottom:0.3rem}
+.metric-card p{font-size:0.7rem;color:var(--text-dim)}
+
+.quant-visual{border-radius:20px;padding:3rem;text-align:center}
+.quant-visual h3{margin-bottom:2rem;font-size:1.2rem}
+.quant-flow{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+.quant-step{text-align:center}
+.quant-box{
+  font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;
+  padding:0.8rem 1.2rem;border-radius:12px;background:var(--bg2);
+  border:1px solid var(--glass-border);margin-bottom:0.3rem;
+  transition:all 0.5s var(--ease-out-expo);
+}
+.quant-step.active .quant-box{
+  border-color:var(--cyan);color:var(--cyan);
+  box-shadow:0 0 25px rgba(0,212,255,0.1);
+}
+.quant-size{font-size:0.6rem;color:var(--text-dim)}
+.quant-arrow{color:var(--cyan);font-size:1.2rem}
+.quant-bar{display:flex;flex-direction:column;gap:0.5rem;max-width:600px;margin:0 auto}
+.qbar-segment{
+  height:24px;border-radius:8px;display:flex;align-items:center;padding:0 0.8rem;
+  font-size:0.6rem;font-family:'JetBrains Mono',monospace;
+  transition:width 2s var(--ease-out-expo);
+}
+.seg-fp32{background:rgba(239,68,68,0.12);color:var(--red)}
+.seg-fp16{background:rgba(245,158,11,0.12);color:var(--amber)}
+.seg-fp8{background:rgba(168,85,247,0.12);color:var(--purple)}
+.seg-fp4{background:rgba(0,212,255,0.12);color:var(--cyan)}
+
+/* ===== SECURITY ===== */
+.security-framework{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:4rem}
+.sec-card{border-radius:16px;padding:2rem;transition:all 0.5s var(--ease-out-expo)}
+.sec-card:hover{transform:translateY(-6px)}
+.sec-icon{font-size:2rem;margin-bottom:1rem}
+.sec-card h4{font-family:'Orbitron',sans-serif;font-size:0.85rem;margin-bottom:0.5rem}
+.sec-card p{font-size:0.8rem;color:var(--text-dim)}
+.explain-flow{display:flex;align-items:center;gap:0.3rem;margin-top:1rem;flex-wrap:wrap}
+.ef-step{
+  padding:0.3rem 0.6rem;border-radius:8px;background:var(--bg2);
+  border:1px solid var(--glass-border);font-size:0.65rem;
+  font-family:'JetBrains Mono',monospace;
+  transition:all 0.4s;
+}
+.ef-step:hover{border-color:var(--glass-border-hover)}
+.ef-final{border-color:rgba(16,185,129,0.3);color:var(--green)}
+.ef-arrow{color:var(--cyan);font-size:0.8rem}
+.risk-levels{margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem}
+.risk-level{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem}
+.risk-dot{width:8px;height:8px;border-radius:50%}
+.risk-level.low .risk-dot{background:var(--green);box-shadow:0 0 8px var(--green)}
+.risk-level.high .risk-dot{background:var(--red);box-shadow:0 0 8px var(--red)}
+.rollback-visual{margin-top:1rem}
+.rb-timeline{display:flex;align-items:center;gap:0.3rem}
+.rb-point{
+  width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:0.7rem;border:1px solid var(--glass-border);background:var(--bg2);
+  transition:all 0.4s;
+}
+.rb-point:hover{transform:scale(1.15)}
+.rb-point[data-state="safe"]{color:var(--green);border-color:rgba(16,185,129,0.3)}
+.rb-point[data-state="action"]{color:var(--cyan);border-color:rgba(0,212,255,0.3)}
+.rb-point[data-state="error"]{color:var(--red);border-color:rgba(239,68,68,0.3)}
+.rb-line{width:24px;height:2px;background:var(--glass-border)}
+.rb-revert{font-size:0.7rem;color:var(--amber);margin-left:0.5rem;font-family:'Orbitron',sans-serif}
+.threat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.threat-card{border-radius:16px;padding:1.5rem;transition:all 0.5s var(--ease-out-expo)}
+.threat-card:hover{transform:translateY(-6px)}
+.threat-icon{font-size:1.5rem;margin-bottom:0.8rem}
+.threat-card h4{font-family:'Orbitron',sans-serif;font-size:0.75rem;margin-bottom:0.5rem}
+.threat-scenario{font-size:0.7rem;color:rgba(239,68,68,0.8);margin-bottom:0.3rem}
+.threat-mitigation{font-size:0.7rem;color:rgba(16,185,129,0.8)}
+
+/* ===== USE CASES ===== */
+.usecase-carousel{position:relative;overflow:hidden;margin-bottom:1.5rem}
+.usecase-card{
+  display:none;grid-template-columns:auto 1fr;gap:3rem;align-items:center;
+  border-radius:20px;padding:3rem;
+}
+.usecase-card.active{display:grid}
+.uc-visual{
+  position:relative;width:120px;height:120px;display:flex;
+  align-items:center;justify-content:center;
+}
+.uc-icon-large{font-size:3rem;z-index:2;position:relative}
+.uc-glow{
+  position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.1),transparent);
+  animation:ucGlowPulse 3s ease-in-out infinite;
+}
+@keyframes ucGlowPulse{0%,100%{transform:scale(1);opacity:0.4}50%{transform:scale(1.15);opacity:0.8}}
+.uc-tag{
+  font-size:0.6rem;font-family:'JetBrains Mono',monospace;letter-spacing:2px;color:var(--cyan);
+  background:rgba(0,212,255,0.06);padding:0.2rem 0.6rem;border-radius:4px;
+  display:inline-block;margin-bottom:0.5rem;
+}
+.uc-content h3{font-size:1.3rem;margin-bottom:0.8rem}
+.uc-content p{font-size:0.85rem;color:var(--text-dim);margin-bottom:1rem}
+.uc-stat{display:flex;align-items:baseline;gap:0.5rem}
+.uc-stat-val{
+  font-family:'Orbitron',sans-serif;font-size:1.8rem;font-weight:800;
+  color:var(--cyan);text-shadow:0 0 20px rgba(0,212,255,0.2);
+}
+.uc-stat-label{font-size:0.7rem;color:var(--text-dim)}
+.carousel-controls{display:flex;align-items:center;justify-content:center;gap:1.5rem}
+.carousel-btn{
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--glass-border);background:var(--glass);
+  color:var(--text);font-size:1rem;
+  transition:all 0.4s var(--ease-out-expo);
+  display:flex;align-items:center;justify-content:center;
+}
+.carousel-btn:hover{
+  border-color:var(--cyan);color:var(--cyan);
+  box-shadow:0 0 20px rgba(0,212,255,0.1);
+  transform:scale(1.05);
+}
+.carousel-dots{display:flex;gap:0.5rem}
+.dot{
+  width:8px;height:8px;border-radius:50%;background:var(--glass-border);
+  cursor:pointer;transition:all 0.4s var(--ease-out-expo);
+}
+.dot.active{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+
+/* ===== CHALLENGES ===== */
+.section-dark{background:var(--bg2)}
+.challenges-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.challenge-card{border-radius:16px;padding:2rem;transition:all 0.5s var(--ease-out-expo)}
+.challenge-card:hover{transform:translateY(-6px)}
+.challenge-num{
+  font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:800;
+  background:linear-gradient(135deg,var(--amber),var(--red));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.8rem;
+}
+.challenge-card h4{font-family:'Orbitron',sans-serif;font-size:0.85rem;margin-bottom:0.5rem}
+.challenge-card p{font-size:0.8rem;color:var(--text-dim);margin-bottom:1rem}
+.challenge-severity{display:flex;align-items:center;gap:0.8rem}
+.sev-bar{flex:1;height:3px;background:rgba(255,255,255,0.03);border-radius:2px;overflow:hidden}
+.sev-fill{
+  height:100%;background:linear-gradient(90deg,var(--amber),var(--red));border-radius:2px;
+  transition:width 2s var(--ease-out-expo);
+}
+.challenge-severity span{font-size:0.6rem;color:var(--red);font-family:'JetBrains Mono',monospace;letter-spacing:1px}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative;max-width:700px;margin:0 auto 4rem;padding-left:40px}
+.timeline-line{
+  position:absolute;left:16px;top:0;bottom:0;width:2px;
+  background:linear-gradient(var(--cyan),var(--purple),var(--pink));
+  opacity:0.5;
+}
+.timeline-item{position:relative;margin-bottom:2.5rem;padding-left:2rem}
+.tl-marker{
+  position:absolute;left:-32px;top:0;width:32px;height:32px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--cyan);
+  display:flex;align-items:center;justify-content:center;z-index:2;
+  box-shadow:0 0 12px rgba(0,212,255,0.15);
+}
+.tl-phase{
+  font-family:'JetBrains Mono',monospace;font-size:0.4rem;font-weight:700;
+  color:var(--cyan);white-space:nowrap;
+}
+.tl-content{border-radius:16px;padding:1.5rem;transition:all 0.5s var(--ease-out-expo)}
+.tl-content:hover{transform:translateX(8px)}
+.tl-time{font-size:0.65rem;color:var(--cyan);font-family:'JetBrains Mono',monospace;letter-spacing:1px}
+.tl-content h4{font-size:0.9rem;margin:0.3rem 0;font-family:'Orbitron',sans-serif}
+.tl-content p{font-size:0.8rem;color:var(--text-dim)}
+
+/* ===== FUTURE VISION ===== */
+.future-vision{max-width:800px;margin:0 auto}
+.vision-card{
+  border-radius:20px;padding:3rem;text-align:center;overflow:hidden;
+  background:linear-gradient(135deg,rgba(0,212,255,0.04),rgba(168,85,247,0.04));
+}
+.vision-card h3{font-size:1.5rem;margin-bottom:1rem}
+.vision-card p{font-size:1rem;color:var(--text-dim);line-height:1.8}
+.vision-glow{
+  position:absolute;bottom:-50%;left:50%;transform:translateX(-50%);
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.08),transparent);
+  pointer-events:none;filter:blur(60px);
+}
+
+/* ===== FOOTER ===== */
+.site-footer{padding:4rem 2rem;text-align:center;border-top:1px solid var(--glass-border);z-index:2;position:relative}
+.footer-content{max-width:600px;margin:0 auto}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:1rem}
+.footer-tagline{color:var(--text-dim);font-size:0.9rem;margin-bottom:1.5rem}
+.footer-links{
+  display:flex;justify-content:center;gap:0.5rem;flex-wrap:wrap;
+  color:var(--text-dim);font-size:0.7rem;margin-bottom:1.5rem;
+}
+.footer-copy{font-size:0.65rem;color:rgba(255,255,255,0.15)}
+
+/* ===== SCROLL ANIMATIONS ===== */
+/* GSAP handles scroll animations; these are CSS fallbacks only */
+[data-anim]{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.6s var(--ease-out-expo),transform 0.6s var(--ease-out-expo);
+}
+[data-anim].visible{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  html,body{cursor:auto}
+  #ai-cursor,#cursor-trail-canvas{display:none}
+  .nav-links{display:none}
+  .subsection-grid,.automation-demo{grid-template-columns:1fr}
+  .arch-nodes{grid-template-columns:1fr 1fr}
+  .routing-engine{grid-template-columns:1fr;text-align:center}
+  .usecase-card.active{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;align-items:center}
+  .failover-flow{flex-direction:column}
+  .failover-connector{width:2px;height:20px}
+  .failover-connector .connector-particle{
+    animation-name:connectorPulseV;
+  }
+  .learning-steps{flex-direction:column}
+  .learn-arrow{transform:rotate(90deg)}
+  .brand-version{display:none}
+}
+@keyframes connectorPulseV{
+  0%{top:-4px;opacity:0}50%{opacity:1}100%{top:20px;opacity:0}
+}
+    </style>
+</head>
+<body>
+    <!-- ============ AI CURSOR SYSTEM ============ -->
+    <div id="ai-cursor">
+        <div class="cursor-core"></div>
+        <div class="cursor-ring"></div>
+        <div class="cursor-ring-outer"></div>
+    </div>
+    <canvas id="cursor-trail-canvas"></canvas>
+
+    <!-- ============ THREE.JS NEURAL CANVAS ============ -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- ============ PARALLAX BACKGROUND LAYERS ============ -->
+    <div class="parallax-layer parallax-bg" data-speed="0.02">
+        <div class="grid-overlay"></div>
+    </div>
+    <div class="parallax-layer parallax-mid" data-speed="0.05">
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+    </div>
+
+    <!-- ============ VOLUMETRIC LIGHT OVERLAYS ============ -->
+    <div class="volumetric-light vl-1"></div>
+    <div class="volumetric-light vl-2"></div>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav id="main-nav">
+        <div class="nav-brand">
+            <div class="brand-logo">
+                <svg viewBox="0 0 40 40" width="32" height="32">
+                    <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" fill="none" stroke="url(#navGrad)" stroke-width="1.5"/>
+                    <polygon points="20,8 32,14 32,26 20,32 8,26 8,14" fill="none" stroke="url(#navGrad)" stroke-width="0.8" opacity="0.5"/>
+                    <circle cx="20" cy="20" r="3" fill="url(#navGrad)"/>
+                    <defs>
+                        <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00d4ff"/>
+                            <stop offset="100%" stop-color="#a855f7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <span class="brand-text">XCERA</span>
+            <span class="brand-version">OS</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-link active" data-section="hero">
+                <span class="nav-link-text">Home</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+            <a href="#huc" class="nav-link" data-section="huc">
+                <span class="nav-link-text">HUC</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+            <a href="#compute" class="nav-link" data-section="compute">
+                <span class="nav-link-text">Compute</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+            <a href="#os-arch" class="nav-link" data-section="os-arch">
+                <span class="nav-link-text">OS Arch</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+            <a href="#automation" class="nav-link" data-section="automation">
+                <span class="nav-link-text">Automation</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+            <a href="#bios" class="nav-link" data-section="bios">
+                <span class="nav-link-text">BIOS AI</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+            <a href="#performance" class="nav-link" data-section="performance">
+                <span class="nav-link-text">Performance</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+            <a href="#security" class="nav-link" data-section="security">
+                <span class="nav-link-text">Security</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+            <a href="#roadmap" class="nav-link" data-section="roadmap">
+                <span class="nav-link-text">Roadmap</span>
+                <span class="nav-link-indicator"></span>
+            </a>
+        </div>
+        <div class="nav-status">
+            <div class="status-ring">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <circle cx="12" cy="12" r="10" fill="none" stroke="rgba(16,185,129,0.3)" stroke-width="1.5"/>
+                    <circle cx="12" cy="12" r="10" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="15 48" class="status-ring-fill"/>
+                </svg>
+            </div>
+            <span class="status-text">SYSTEM ONLINE</span>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-bg-grid"></div>
+        <!-- Hero ambient glow -->
+        <div class="hero-ambient-glow"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="badge-ai-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span class="badge-text">NEXT-GENERATION PARADIGM</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line" data-delay="0">Heterogeneous</span>
+                <span class="title-line gradient-text" data-delay="1">Unified Computing</span>
+                <span class="title-line" data-delay="2">&amp; The <span class="gradient-text-alt">Xcera</span> OS</span>
+            </h1>
+            <p class="hero-subtitle">
+                A complete reimagining of the computing stack — where AI models become first-class processes, 
+                memory walls dissolve, and intent replaces commands.
+            </p>
+
+            <!-- AI Thinking indicator -->
+            <div class="ai-thinking-bar">
+                <div class="thinking-pulse"></div>
+                <span>Neural Interface Active</span>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-card holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="stat-value" data-target="10">0</span><span class="stat-unit">ms</span>
+                    <span class="stat-label">Execution Latency</span>
+                </div>
+                <div class="stat-card holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="stat-value" data-target="50">0</span><span class="stat-unit">%</span>
+                    <span class="stat-label">Memory Overhead Reduction</span>
+                </div>
+                <div class="stat-card holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="stat-value" data-target="128">0</span><span class="stat-unit">bit</span>
+                    <span class="stat-label">Safety Governance</span>
+                </div>
+                <div class="stat-card holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="stat-value" data-target="0">0</span><span class="stat-unit">-copy</span>
+                    <span class="stat-label">Memory Model</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#huc" class="btn-primary" data-magnetic>
+                    <span class="btn-text">Explore Architecture</span>
+                    <span class="btn-glow"></span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#roadmap" class="btn-secondary" data-magnetic>
+                    <span class="btn-text">View Roadmap</span>
+                    <span class="btn-border-glow"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>SCROLL TO EXPLORE</span>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 1: HUC ARCHITECTURE ============ -->
+    <section id="huc" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">01</span>
+            <h2 class="section-title">HUC <span class="gradient-text">Architecture</span></h2>
+            <p class="section-desc">The structural foundation — abandoning siloed processing domains for a fluid, workload-adaptive topology.</p>
+        </div>
+
+        <!-- Interactive Architecture Diagram with animated data flow -->
+        <div class="architecture-diagram" data-scroll-anim="scale-in">
+            <div class="arch-center">
+                <div class="upm-core">
+                    <div class="upm-inner">
+                        <span class="upm-label">UPM</span>
+                        <span class="upm-sublabel">Unified Physical Memory</span>
+                    </div>
+                    <div class="upm-ring ring-1"></div>
+                    <div class="upm-ring ring-2"></div>
+                    <div class="upm-ring ring-3"></div>
+                    <!-- Data flow particles will be injected via JS -->
+                    <canvas class="data-flow-canvas" id="data-flow-canvas"></canvas>
+                </div>
+            </div>
+            <div class="arch-nodes">
+                <div class="arch-node holographic-card node-cpu" data-magnetic data-info="Handles Control Plane & OS Legacy Interrupts">
+                    <div class="holo-shimmer"></div>
+                    <div class="node-icon">CPU</div>
+                    <div class="node-label">Control Plane</div>
+                    <div class="node-pulse-ring"></div>
+                </div>
+                <div class="arch-node holographic-card node-gpu" data-magnetic data-info="Handles Dynamic Activation Shapes & Rendering">
+                    <div class="holo-shimmer"></div>
+                    <div class="node-icon">GPU</div>
+                    <div class="node-label">Dynamic Activations</div>
+                    <div class="node-pulse-ring"></div>
+                </div>
+                <div class="arch-node holographic-card node-npu" data-magnetic data-info="Handles Static Weight-Centric Inference & SLMs">
+                    <div class="holo-shimmer"></div>
+                    <div class="node-icon">NPU</div>
+                    <div class="node-label">Weight Inference</div>
+                    <div class="node-pulse-ring"></div>
+                </div>
+                <div class="arch-node holographic-card node-sec" data-magnetic data-info="STOICHEION Firmware & Hardware Root of Trust">
+                    <div class="holo-shimmer"></div>
+                    <div class="node-icon">SEC</div>
+                    <div class="node-label">STOICHEION</div>
+                    <div class="node-pulse-ring"></div>
+                </div>
+            </div>
+            <div class="arch-fabric">
+                <div class="fabric-line"></div>
+                <span>Coherent Interconnect Fabric</span>
+                <div class="fabric-line"></div>
+            </div>
+        </div>
+
+        <!-- Unified Memory subsection -->
+        <div class="subsection" data-scroll-anim="fade-up">
+            <div class="subsection-grid">
+                <div class="subsection-text">
+                    <h3>Unified Memory Model</h3>
+                    <p>The HUC architecture implements <strong>Unified Physical Memory (UPM)</strong> — CPU, GPU, and NPU share a single physical address space mediated by a shared System-Level Cache. This eliminates explicit data copying and page migration entirely.</p>
+                    <div class="feature-chips">
+                        <span class="chip" data-magnetic>Zero-Copy Execution</span>
+                        <span class="chip" data-magnetic>Hardware ATS</span>
+                        <span class="chip" data-magnetic>900 GB/s Bandwidth</span>
+                        <span class="chip" data-magnetic>Shared SLC</span>
+                    </div>
+                </div>
+                <div class="subsection-visual">
+                    <div class="memory-flow-diagram">
+                        <div class="mem-block mem-cpu">CPU</div>
+                        <div class="mem-arrow"><div class="mem-arrow-particle"></div></div>
+                        <div class="mem-block mem-shared">
+                            <span>Shared<br>Address Space</span>
+                            <div class="mem-pulse"></div>
+                        </div>
+                        <div class="mem-arrow"><div class="mem-arrow-particle"></div></div>
+                        <div class="mem-block mem-gpu">GPU</div>
+                        <div class="mem-connector-v"></div>
+                        <div class="mem-block mem-npu">NPU</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="subsection" data-scroll-anim="fade-up">
+            <h3 class="subsection-title-center">Architecture Comparison</h3>
+            <div class="comparison-table holographic-card">
+                <div class="holo-shimmer"></div>
+                <div class="table-header">
+                    <div class="th">Feature</div>
+                    <div class="th">von Neumann</div>
+                    <div class="th">Apple / NVIDIA</div>
+                    <div class="th highlight">HUC AI-Native</div>
+                </div>
+                <div class="table-row" data-anim="row">
+                    <div class="td label">Memory Model</div>
+                    <div class="td old">Disjoint RAM/VRAM</div>
+                    <div class="td mid">Unified Virtual</div>
+                    <div class="td new">UPM Zero-Copy</div>
+                </div>
+                <div class="table-row" data-anim="row">
+                    <div class="td label">Instruction Set</div>
+                    <div class="td old">CISC / RISC Scalar</div>
+                    <div class="td mid">ARM + Matrix Ext</div>
+                    <div class="td new">Virtual Neuron ISA</div>
+                </div>
+                <div class="table-row" data-anim="row">
+                    <div class="td label">Interconnect</div>
+                    <div class="td old">PCIe Bottleneck</div>
+                    <div class="td mid">NVLink-C2C</div>
+                    <div class="td new">Polymorphic Fabric</div>
+                </div>
+                <div class="table-row" data-anim="row">
+                    <div class="td label">Task Scheduling</div>
+                    <div class="td old">Thread Round Robin</div>
+                    <div class="td mid">Warp Scheduling</div>
+                    <div class="td new">Tensor Partitioning</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 2: AI-ORCHESTRATED COMPUTE ============ -->
+    <section id="compute" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">02</span>
+            <h2 class="section-title">AI-Orchestrated <span class="gradient-text">Compute Layer</span></h2>
+            <p class="section-desc">Intelligence is inverted: AI models determine how compute is allocated, which models are invoked, and where processing occurs.</p>
+        </div>
+
+        <div class="routing-engine" data-scroll-anim="fade-up">
+            <div class="routing-input">
+                <div class="input-prompt holographic-card">
+                    <div class="holo-shimmer"></div>
+                    <span class="prompt-icon">▶</span>
+                    <span class="prompt-text" id="routing-prompt">Analyzing task complexity...</span>
+                    <div class="prompt-typing-cursor"></div>
+                </div>
+            </div>
+            <div class="routing-center">
+                <div class="router-core">
+                    <div class="router-label">RouteLLM<br>Orchestrator</div>
+                    <div class="router-ring"></div>
+                    <div class="router-ring router-ring-2"></div>
+                    <!-- Animated decision particles -->
+                    <div class="router-particles" id="router-particles"></div>
+                </div>
+            </div>
+            <div class="routing-outputs">
+                <div class="route-path holographic-card path-local" id="route-local" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="route-icon">🏠</div>
+                    <div class="route-info">
+                        <h4>Local NPU</h4>
+                        <p>SLMs (Nemotron / Llama 1B)</p>
+                        <span class="route-tag">Low Complexity</span>
+                    </div>
+                    <div class="route-bar"><div class="route-fill" style="--fill: 60%"></div></div>
+                </div>
+                <div class="route-path holographic-card path-reasoning" id="route-reasoning" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="route-icon">🧠</div>
+                    <div class="route-info">
+                        <h4>Local Reasoning</h4>
+                        <p>DeepSeek-R1 / Local LLMs</p>
+                        <span class="route-tag">High Complexity</span>
+                    </div>
+                    <div class="route-bar"><div class="route-fill" style="--fill: 30%"></div></div>
+                </div>
+                <div class="route-path holographic-card path-cloud" id="route-cloud" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="route-icon">☁️</div>
+                    <div class="route-info">
+                        <h4>Cloud Frontier</h4>
+                        <p>GPT-4 / Claude 3.5</p>
+                        <span class="route-tag">Maximum Capability</span>
+                    </div>
+                    <div class="route-bar"><div class="route-fill" style="--fill: 10%"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Failover -->
+        <div class="subsection" data-scroll-anim="fade-up">
+            <div class="failover-diagram holographic-card">
+                <div class="holo-shimmer"></div>
+                <h3>Fault-Tolerant Speculative Execution</h3>
+                <div class="failover-flow">
+                    <div class="failover-step" data-magnetic>
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>Dual Dispatch</h4>
+                            <p>Query sent to cloud + local SLM simultaneously</p>
+                        </div>
+                    </div>
+                    <div class="failover-connector"><div class="connector-particle"></div></div>
+                    <div class="failover-step" data-magnetic>
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>Latency Monitor</h4>
+                            <p>Cloud response checked against deadline budget</p>
+                        </div>
+                    </div>
+                    <div class="failover-connector"><div class="connector-particle"></div></div>
+                    <div class="failover-step" data-magnetic>
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>Smart Swap</h4>
+                            <p>If cloud exceeds budget → instant local fallback</p>
+                        </div>
+                    </div>
+                    <div class="failover-connector"><div class="connector-particle"></div></div>
+                    <div class="failover-step step-final" data-magnetic>
+                        <div class="step-num">✓</div>
+                        <div class="step-content">
+                            <h4>Always Available</h4>
+                            <p>Works even in air-gapped environments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 3: XCERA OS ARCHITECTURE ============ -->
+    <section id="os-arch" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">03</span>
+            <h2 class="section-title">Xcera OS <span class="gradient-text">Architecture</span></h2>
+            <p class="section-desc">An intent-driven, agent-native ecosystem designed from the ground up to support LLMs as first-class processes.</p>
+        </div>
+
+        <!-- OS Stack Diagram with morph transitions -->
+        <div class="os-stack" data-scroll-anim="stagger-up">
+            <div class="stack-layer holographic-card layer-app" data-layer="app" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="layer-content">
+                    <div class="layer-icon">🎯</div>
+                    <div>
+                        <h4>Application / User Intent</h4>
+                        <p>Natural language commands → intention realization</p>
+                    </div>
+                </div>
+                <div class="layer-detail">
+                    <p>Users express goals in natural language. The OS interprets, plans, and executes — no manual app switching required.</p>
+                </div>
+                <div class="layer-depth-indicator"></div>
+            </div>
+            <div class="stack-connector"><div class="connector-pulse"></div></div>
+            <div class="stack-layer holographic-card layer-perception" data-layer="perception" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="layer-content">
+                    <div class="layer-icon">👁️</div>
+                    <div>
+                        <h4>Perception Layer</h4>
+                        <p>OmniParser V2 VLM + Speech-to-Text Streams</p>
+                    </div>
+                </div>
+                <div class="layer-detail">
+                    <p>The OS "looks" at the framebuffer, converting raw pixels into structured DOM-like elements with semantic understanding.</p>
+                </div>
+                <div class="layer-depth-indicator"></div>
+            </div>
+            <div class="stack-connector"><div class="connector-pulse"></div></div>
+            <div class="stack-layer holographic-card layer-agent" data-layer="agent" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="layer-content">
+                    <div class="layer-icon">🤖</div>
+                    <div>
+                        <h4>Agent Layer</h4>
+                        <p>ReAct + Tree-of-Thought + MCP Servers</p>
+                    </div>
+                </div>
+                <div class="layer-detail">
+                    <p>The Agent Loop: Perceive → Reason → Plan → Act → Observe. Manages state, timeouts, and retry limits to prevent infinite loops.</p>
+                </div>
+                <div class="layer-depth-indicator"></div>
+            </div>
+            <div class="stack-connector"><div class="connector-pulse"></div></div>
+            <div class="stack-layer holographic-card layer-memory" data-layer="memory" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="layer-content">
+                    <div class="layer-icon">🧠</div>
+                    <div>
+                        <h4>Memory Layer</h4>
+                        <p>Working + Episodic + Semantic + Procedural</p>
+                    </div>
+                </div>
+                <div class="layer-detail">
+                    <p>Vector DBs, Knowledge Graphs, and workflow repositories prevent the "amnesia" plaguing standard conversational models.</p>
+                </div>
+                <div class="layer-depth-indicator"></div>
+            </div>
+            <div class="stack-connector"><div class="connector-pulse"></div></div>
+            <div class="stack-layer holographic-card layer-kernel" data-layer="kernel" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="layer-content">
+                    <div class="layer-icon">⚙️</div>
+                    <div>
+                        <h4>Kernel Layer</h4>
+                        <p>SchedCP AI Scheduler + eBPF Policy Injection</p>
+                    </div>
+                </div>
+                <div class="layer-detail">
+                    <p>LLM-driven semantic analysis synthesizes custom scheduling policies, yielding 2.11x improvement in tail latency.</p>
+                </div>
+                <div class="layer-depth-indicator"></div>
+            </div>
+            <div class="stack-connector"><div class="connector-pulse"></div></div>
+            <div class="stack-layer holographic-card layer-hw" data-layer="hw" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="layer-content">
+                    <div class="layer-icon">🔧</div>
+                    <div>
+                        <h4>HUC Hardware Fabric</h4>
+                        <p>Embedded Intelligence + STOICHEION Governance</p>
+                    </div>
+                </div>
+                <div class="layer-depth-indicator"></div>
+            </div>
+        </div>
+
+        <!-- Memory Types -->
+        <div class="subsection" data-scroll-anim="stagger-up">
+            <h3 class="subsection-title-center">Memory Architecture</h3>
+            <div class="memory-grid">
+                <div class="memory-card holographic-card" data-type="working" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="memory-icon">⚡</div>
+                    <h4>Working Memory</h4>
+                    <p class="memory-role">Short-term context retention</p>
+                    <p class="memory-impl">In-RAM context window for active token generation and agent loop state.</p>
+                    <div class="memory-bar"><div class="memory-fill" style="--fill-color: #00d4ff"></div></div>
+                </div>
+                <div class="memory-card holographic-card" data-type="episodic" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="memory-icon">📅</div>
+                    <h4>Episodic Memory</h4>
+                    <p class="memory-role">Specific interaction recall</p>
+                    <p class="memory-impl">Timestamped records in Vector DBs — e.g., "User attached a PDF yesterday".</p>
+                    <div class="memory-bar"><div class="memory-fill" style="--fill-color: #a855f7"></div></div>
+                </div>
+                <div class="memory-card holographic-card" data-type="semantic" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="memory-icon">🌐</div>
+                    <h4>Semantic Memory</h4>
+                    <p class="memory-role">Factual knowledge &amp; preferences</p>
+                    <p class="memory-impl">Knowledge Graphs storing rules, relationships, and user constraints.</p>
+                    <div class="memory-bar"><div class="memory-fill" style="--fill-color: #f59e0b"></div></div>
+                </div>
+                <div class="memory-card holographic-card" data-type="procedural" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="memory-icon">🔄</div>
+                    <h4>Procedural Memory</h4>
+                    <p class="memory-role">Reusable execution workflows</p>
+                    <p class="memory-impl">Generalized steps from successful actions stored as executable scripts.</p>
+                    <div class="memory-bar"><div class="memory-fill" style="--fill-color: #10b981"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 4: FULL PC AUTOMATION ============ -->
+    <section id="automation" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">04</span>
+            <h2 class="section-title">Full PC <span class="gradient-text">Automation</span></h2>
+            <p class="section-desc">Vision-first automation that transcends brittle coordinate-based scripting — the OS sees, understands, and acts.</p>
+        </div>
+
+        <div class="automation-demo" data-scroll-anim="fade-up">
+            <div class="demo-screen holographic-card">
+                <div class="holo-shimmer"></div>
+                <div class="screen-header">
+                    <div class="screen-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="screen-title">Xcera Vision Engine</span>
+                    <div class="screen-status">
+                        <span class="screen-fps">60 FPS</span>
+                    </div>
+                </div>
+                <div class="screen-content">
+                    <div class="demo-elements">
+                        <div class="demo-element de-1" data-label="Button: Submit">
+                            <span>Submit Report</span>
+                            <div class="bbox bbox-1"></div>
+                        </div>
+                        <div class="demo-element de-2" data-label="Input: Search">
+                            <span>Search files...</span>
+                            <div class="bbox bbox-2"></div>
+                        </div>
+                        <div class="demo-element de-3" data-label="Menu: Navigation">
+                            <span>☰ Menu</span>
+                            <div class="bbox bbox-3"></div>
+                        </div>
+                        <div class="demo-element de-4" data-label="Chart: Revenue">
+                            <div class="mini-chart">
+                                <div class="bar" style="height:40%"></div>
+                                <div class="bar" style="height:65%"></div>
+                                <div class="bar" style="height:55%"></div>
+                                <div class="bar" style="height:80%"></div>
+                                <div class="bar" style="height:70%"></div>
+                            </div>
+                            <div class="bbox bbox-4"></div>
+                        </div>
+                    </div>
+                    <div class="vision-cursor" id="vision-cursor"></div>
+                    <!-- AI scan line -->
+                    <div class="ai-scan-line"></div>
+                </div>
+            </div>
+            <div class="demo-info">
+                <div class="info-step active" id="demo-step-1">
+                    <div class="step-indicator">
+                        <div class="step-dot"></div>
+                        <span>PERCEIVE</span>
+                    </div>
+                    <p>VLM tokenizes the screen — detecting every interactable element with bounding boxes and semantic labels.</p>
+                </div>
+                <div class="info-step" id="demo-step-2">
+                    <div class="step-indicator">
+                        <div class="step-dot"></div>
+                        <span>REASON</span>
+                    </div>
+                    <p>Agent analyzes element semantics, determining which UI components fulfill the user's intent.</p>
+                </div>
+                <div class="info-step" id="demo-step-3">
+                    <div class="step-indicator">
+                        <div class="step-dot"></div>
+                        <span>ACT</span>
+                    </div>
+                    <p>Precise actions executed — clicks, keystrokes, drags — just as a human would operate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Self-Learning -->
+        <div class="subsection" data-scroll-anim="fade-up">
+            <div class="learning-flow holographic-card">
+                <div class="holo-shimmer"></div>
+                <h3>Self-Learning Workflows: Record Once, Generalize</h3>
+                <div class="learning-steps">
+                    <div class="learn-step" data-magnetic>
+                        <div class="learn-icon">👤</div>
+                        <h4>User Performs Task</h4>
+                        <p>Analyst downloads CSV, filters data, imports to presentation</p>
+                    </div>
+                    <div class="learn-arrow">→</div>
+                    <div class="learn-step" data-magnetic>
+                        <div class="learn-icon">👁️</div>
+                        <h4>Xcera Observes</h4>
+                        <p>Perception layer records the full visual sequence</p>
+                    </div>
+                    <div class="learn-arrow">→</div>
+                    <div class="learn-step" data-magnetic>
+                        <div class="learn-icon">🧠</div>
+                        <h4>Logic Extracted</h4>
+                        <p>Reasoning engine discards noise, extracts reusable patterns</p>
+                    </div>
+                    <div class="learn-arrow">→</div>
+                    <div class="learn-step" data-magnetic>
+                        <div class="learn-icon">💾</div>
+                        <h4>Stored in Memory</h4>
+                        <p>Workflow committed to Procedural Memory as executable script</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 5: BIOS AI ============ -->
+    <section id="bios" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">05</span>
+            <h2 class="section-title">AI Embedded in <span class="gradient-text">BIOS</span></h2>
+            <p class="section-desc">The root of trust cannot exist in software the AI itself controls — it lives in silicon.</p>
+        </div>
+
+        <div class="bios-visual" data-scroll-anim="scale-in">
+            <div class="chip-diagram">
+                <div class="chip-body holographic-card">
+                    <div class="holo-shimmer"></div>
+                    <div class="chip-core">
+                        <span class="chip-label">STOICHEION</span>
+                        <span class="chip-sub">128-bit Governance Firmware</span>
+                    </div>
+                    <div class="chip-circuit-lines">
+                        <svg viewBox="0 0 200 200" width="100%" height="100%">
+                            <line x1="0" y1="40" x2="30" y2="40" class="circuit-line"/>
+                            <line x1="0" y1="80" x2="20" y2="80" class="circuit-line"/>
+                            <line x1="0" y1="120" x2="35" y2="120" class="circuit-line"/>
+                            <line x1="0" y1="160" x2="25" y2="160" class="circuit-line"/>
+                            <line x1="170" y1="40" x2="200" y2="40" class="circuit-line"/>
+                            <line x1="175" y1="80" x2="200" y2="80" class="circuit-line"/>
+                            <line x1="165" y1="120" x2="200" y2="120" class="circuit-line"/>
+                            <line x1="180" y1="160" x2="200" y2="160" class="circuit-line"/>
+                            <line x1="40" y1="0" x2="40" y2="25" class="circuit-line"/>
+                            <line x1="100" y1="0" x2="100" y2="20" class="circuit-line"/>
+                            <line x1="160" y1="0" x2="160" y2="30" class="circuit-line"/>
+                            <line x1="40" y1="175" x2="40" y2="200" class="circuit-line"/>
+                            <line x1="100" y1="180" x2="100" y2="200" class="circuit-line"/>
+                            <line x1="160" y1="170" x2="160" y2="200" class="circuit-line"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="registers">
+                <div class="register" data-reg="D0" data-magnetic><span class="reg-name">D0</span><span class="reg-func">Foundation</span></div>
+                <div class="register" data-reg="D1" data-magnetic><span class="reg-name">D1</span><span class="reg-func">Detection</span></div>
+                <div class="register" data-reg="D2" data-magnetic><span class="reg-name">D2</span><span class="reg-func">Architecture</span></div>
+                <div class="register" data-reg="D3" data-magnetic><span class="reg-name">D3</span><span class="reg-func">Validation</span></div>
+                <div class="register" data-reg="D4" data-magnetic><span class="reg-name">D4</span><span class="reg-func">Containment</span></div>
+                <div class="register" data-reg="D5" data-magnetic><span class="reg-name">D5</span><span class="reg-func">Monitoring</span></div>
+                <div class="register" data-reg="D6" data-magnetic><span class="reg-name">D6</span><span class="reg-func">Enforcement</span></div>
+                <div class="register highlight" data-reg="D7" data-magnetic><span class="reg-name">D7</span><span class="reg-func">Sovereign</span></div>
+            </div>
+        </div>
+
+        <div class="subsection" data-scroll-anim="fade-up">
+            <div class="subsection-grid">
+                <div class="subsection-text">
+                    <h3>Hardware-Enforced Governance</h3>
+                    <p>128 rigid safety axioms organized into eight 16-bit registers. Because these axioms are mapped isomorphically to logic gates on the HUC fabric, governance is <strong>deterministic</strong> and cannot be bypassed, tampered with, or updated without physically destroying the chip.</p>
+                    <p>The <strong>D7 Sovereign</strong> register ensures an absolute physical kill-switch and human-override authority is maintained at the Most Significant Bit level.</p>
+                </div>
+                <div class="subsection-visual">
+                    <div class="boot-sequence">
+                        <div class="boot-step" data-phase="sec"><span class="boot-tag">SEC</span><span>Security Phase</span></div>
+                        <div class="boot-step" data-phase="pei"><span class="boot-tag">PEI</span><span>Pre-EFI Init</span></div>
+                        <div class="boot-step" data-phase="dxe"><span class="boot-tag">DXE</span><span>Driver Execution</span></div>
+                        <div class="boot-step" data-phase="bds"><span class="boot-tag">BDS</span><span>Boot Device Select</span></div>
+                        <div class="boot-step" data-phase="os"><span class="boot-tag">OS</span><span>Xcera Kernel Load</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 6: PERFORMANCE ============ -->
+    <section id="performance" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">06</span>
+            <h2 class="section-title">Performance &amp; <span class="gradient-text">Optimization</span></h2>
+            <p class="section-desc">Near-zero latency through GPU-first execution, aggressive quantization, and hardware-software co-design.</p>
+        </div>
+
+        <!-- Live Metric Dashboards -->
+        <div class="perf-metrics" data-scroll-anim="stagger-up">
+            <div class="metric-card holographic-card" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="metric-ring" data-percent="96">
+                    <svg viewBox="0 0 120 120">
+                        <defs>
+                            <linearGradient id="ringGradDef" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#00d4ff"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="54" class="ring-bg"/>
+                        <circle cx="60" cy="60" r="54" class="ring-fill"/>
+                    </svg>
+                    <span class="metric-value">96%</span>
+                </div>
+                <h4>Instruction Overhead Eliminated</h4>
+                <p>VN ISA reduces off-chip instruction fetch stalls</p>
+            </div>
+            <div class="metric-card holographic-card" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="metric-ring" data-percent="50">
+                    <svg viewBox="0 0 120 120">
+                        <defs>
+                            <linearGradient id="ringGradDef2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#00d4ff"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="54" class="ring-bg"/>
+                        <circle cx="60" cy="60" r="54" class="ring-fill"/>
+                    </svg>
+                    <span class="metric-value">50%</span>
+                </div>
+                <h4>FlashHead Compute Savings</h4>
+                <p>Retrieval-style pipeline replaces dense classification</p>
+            </div>
+            <div class="metric-card holographic-card" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="metric-ring" data-percent="211">
+                    <svg viewBox="0 0 120 120">
+                        <defs>
+                            <linearGradient id="ringGradDef3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#00d4ff"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="54" class="ring-bg"/>
+                        <circle cx="60" cy="60" r="54" class="ring-fill"/>
+                    </svg>
+                    <span class="metric-value">2.11×</span>
+                </div>
+                <h4>Tail Latency Improvement</h4>
+                <p>SchedCP vs standard heuristic schedulers</p>
+            </div>
+        </div>
+
+        <div class="quant-visual holographic-card" data-scroll-anim="fade-up">
+            <div class="holo-shimmer"></div>
+            <h3>Quantization Pipeline</h3>
+            <div class="quant-flow">
+                <div class="quant-step"><div class="quant-box">FP32</div><span class="quant-size">Full Precision</span></div>
+                <div class="quant-arrow">▸</div>
+                <div class="quant-step"><div class="quant-box">FP16</div><span class="quant-size">Half Precision</span></div>
+                <div class="quant-arrow">▸</div>
+                <div class="quant-step"><div class="quant-box">FP8</div><span class="quant-size">Quarter</span></div>
+                <div class="quant-arrow">▸</div>
+                <div class="quant-step active"><div class="quant-box">FP4</div><span class="quant-size">Micro-Tensor</span></div>
+            </div>
+            <div class="quant-bar">
+                <div class="qbar-segment seg-fp32" style="width: 100%">FP32 — 100% Memory</div>
+                <div class="qbar-segment seg-fp16" style="width: 50%">FP16 — 50%</div>
+                <div class="qbar-segment seg-fp8" style="width: 25%">FP8 — 25%</div>
+                <div class="qbar-segment seg-fp4" style="width: 12.5%">FP4 — 12.5%</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 7: SECURITY ============ -->
+    <section id="security" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">07</span>
+            <h2 class="section-title">Security &amp; <span class="gradient-text">Safety Model</span></h2>
+            <p class="section-desc">A framework designed specifically to govern autonomy — traditional cybersecurity is insufficient.</p>
+        </div>
+
+        <div class="security-framework" data-scroll-anim="stagger-up">
+            <div class="sec-card holographic-card" id="sec-explain" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="sec-icon">📋</div>
+                <h4>Explain-Before-Execute</h4>
+                <p>All state-altering commands require a structured cryptographic log of reasoning chain and intended outcome before execution.</p>
+                <div class="sec-visual">
+                    <div class="explain-flow">
+                        <span class="ef-step">Intent</span>
+                        <span class="ef-arrow">→</span>
+                        <span class="ef-step">Explain</span>
+                        <span class="ef-arrow">→</span>
+                        <span class="ef-step">Verify</span>
+                        <span class="ef-arrow">→</span>
+                        <span class="ef-step ef-final">Execute</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-card holographic-card" id="sec-risk" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="sec-icon">⚖️</div>
+                <h4>Risk-Scored Actions</h4>
+                <p>MAESTRO-inspired threat modeling with Tool Utilization Efficacy (TUE) and Component Synergy Score (CSS).</p>
+                <div class="risk-levels">
+                    <div class="risk-level low">
+                        <span class="risk-dot"></span>
+                        <span>Low Risk → Autonomous</span>
+                    </div>
+                    <div class="risk-level high">
+                        <span class="risk-dot"></span>
+                        <span>High Risk → HITL Gated</span>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-card holographic-card" id="sec-sandbox" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="sec-icon">🔒</div>
+                <h4>Sandboxed Rollback</h4>
+                <p>Hardware-enforced Kata Containers with full CoW filesystem snapshots. Instant revert to any microsecond.</p>
+                <div class="rollback-visual">
+                    <div class="rb-timeline">
+                        <div class="rb-point" data-state="safe">✓</div>
+                        <div class="rb-line"></div>
+                        <div class="rb-point" data-state="action">▶</div>
+                        <div class="rb-line"></div>
+                        <div class="rb-point" data-state="error">✗</div>
+                        <div class="rb-revert">⟲ Revert</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Threat Table -->
+        <div class="subsection" data-scroll-anim="stagger-up">
+            <h3 class="subsection-title-center">Threat Mitigation Matrix</h3>
+            <div class="threat-grid">
+                <div class="threat-card holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="threat-icon">🎭</div>
+                    <h4>Agent Kidnapping</h4>
+                    <p class="threat-scenario">Attacker extracts model weights from memory</p>
+                    <p class="threat-mitigation">Confidential Containers (CoCo) &amp; Memory Encryption</p>
+                </div>
+                <div class="threat-card holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="threat-icon">💉</div>
+                    <h4>Prompt Injection</h4>
+                    <p class="threat-scenario">Malicious webpage forces data exfiltration</p>
+                    <p class="threat-mitigation">Sandboxing, Context Sanitization, Tool Boundaries</p>
+                </div>
+                <div class="threat-card holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="threat-icon">♾️</div>
+                    <h4>Hallucination Loop</h4>
+                    <p class="threat-scenario">Agent endlessly loops API calls</p>
+                    <p class="threat-mitigation">Timeouts, Retry Limits, Circuit Breakers</p>
+                </div>
+                <div class="threat-card holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <div class="threat-icon">⚠️</div>
+                    <h4>Unauthorized Execution</h4>
+                    <p class="threat-scenario">Agent deletes critical system files</p>
+                    <p class="threat-mitigation">Explain-Before-Execute, HITL Approval Gates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 8: USE CASES ============ -->
+    <section id="usecases" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">08</span>
+            <h2 class="section-title">Real-World <span class="gradient-text">Use Cases</span></h2>
+            <p class="section-desc">Radically transforming efficiency and creativity across gaming, creative workflows, and daily productivity.</p>
+        </div>
+
+        <div class="usecase-carousel" data-scroll-anim="fade-up">
+            <div class="usecase-card holographic-card active" data-case="gaming">
+                <div class="holo-shimmer"></div>
+                <div class="uc-visual">
+                    <div class="uc-icon-large">🎮</div>
+                    <div class="uc-glow"></div>
+                </div>
+                <div class="uc-content">
+                    <span class="uc-tag">Gaming</span>
+                    <h3>Low-Latency AI Control</h3>
+                    <p>NPCs transition from rigid state-machines to dynamic, multimodal agents. The VLM observes player actions in real-time, formulates complex counter-strategies instantaneously using shared UPM.</p>
+                    <div class="uc-stat">
+                        <span class="uc-stat-val">&lt;10ms</span>
+                        <span class="uc-stat-label">Response Latency</span>
+                    </div>
+                </div>
+            </div>
+            <div class="usecase-card holographic-card" data-case="creative">
+                <div class="holo-shimmer"></div>
+                <div class="uc-visual">
+                    <div class="uc-icon-large">🎬</div>
+                    <div class="uc-glow"></div>
+                </div>
+                <div class="uc-content">
+                    <span class="uc-tag">Creative</span>
+                    <h3>Video Editing Automation</h3>
+                    <p>"Extract ocean footage, color grade to cinematic teal-and-orange, synchronize cuts to audio downbeats." Hours compressed to minutes.</p>
+                    <div class="uc-stat">
+                        <span class="uc-stat-val">10×</span>
+                        <span class="uc-stat-label">Workflow Speedup</span>
+                    </div>
+                </div>
+            </div>
+            <div class="usecase-card holographic-card" data-case="productivity">
+                <div class="holo-shimmer"></div>
+                <div class="uc-visual">
+                    <div class="uc-icon-large">📊</div>
+                    <div class="uc-glow"></div>
+                </div>
+                <div class="uc-content">
+                    <span class="uc-tag">Productivity</span>
+                    <h3>Full PC Automation</h3>
+                    <p>"Find Q3 revenue spreadsheet, cross-reference with expense reports in email, generate localized PDF presentation."</p>
+                    <div class="uc-stat">
+                        <span class="uc-stat-val">0</span>
+                        <span class="uc-stat-label">Mouse Clicks Required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn" id="uc-prev" data-magnetic>←</button>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+            <button class="carousel-btn" id="uc-next" data-magnetic>→</button>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 9: CHALLENGES ============ -->
+    <section id="challenges" class="section section-dark">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">09</span>
+            <h2 class="section-title">Challenges &amp; <span class="gradient-text-warn">Limitations</span></h2>
+            <p class="section-desc">The transition to an AI-native paradigm is accompanied by significant engineering challenges.</p>
+        </div>
+
+        <div class="challenges-grid" data-scroll-anim="stagger-up">
+            <div class="challenge-card holographic-card" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="challenge-num">01</div>
+                <h4>Hardware Constraints</h4>
+                <p>Continuous multimodal inference risks thermal throttling and battery degradation. Requires breakthroughs in low-bit quantization and analog computing.</p>
+                <div class="challenge-severity">
+                    <div class="sev-bar"><div class="sev-fill" style="width: 85%"></div></div>
+                    <span>Critical</span>
+                </div>
+            </div>
+            <div class="challenge-card holographic-card" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="challenge-num">02</div>
+                <h4>Model Hallucination</h4>
+                <p>A hallucination in an Agentic OS can delete databases or misconfigure security. Demands rigorous reinforcement learning and verifiable reward modeling.</p>
+                <div class="challenge-severity">
+                    <div class="sev-bar"><div class="sev-fill" style="width: 95%"></div></div>
+                    <span>Extreme</span>
+                </div>
+            </div>
+            <div class="challenge-card holographic-card" data-magnetic>
+                <div class="holo-shimmer"></div>
+                <div class="challenge-num">03</div>
+                <h4>OS-Level Security</h4>
+                <p>Indirect Prompt Injection via benign documents can hijack the agent's logic. Requires impenetrable isolation between reasoning and execution.</p>
+                <div class="challenge-severity">
+                    <div class="sev-bar"><div class="sev-fill" style="width: 90%"></div></div>
+                    <span>Extreme</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 10: ROADMAP ============ -->
+    <section id="roadmap" class="section">
+        <div class="section-header" data-scroll-anim="fade-up">
+            <span class="section-number">10</span>
+            <h2 class="section-title">Implementation <span class="gradient-text">Roadmap</span></h2>
+            <p class="section-desc">A phased, multi-year strategy from incubation to the post-application computing era.</p>
+        </div>
+
+        <div class="timeline" data-scroll-anim="stagger-up">
+            <div class="timeline-line"></div>
+            <div class="timeline-item" data-phase="0">
+                <div class="tl-marker"><span class="tl-phase">Phase 0</span></div>
+                <div class="tl-content holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="tl-time">Current</span>
+                    <h4>Incubation</h4>
+                    <p>Agentic Applications — Software-level agents within legacy OS boundaries. VLM screen parsing (OmniParser) and basic API tool use.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-phase="1">
+                <div class="tl-marker"><span class="tl-phase">Phase 1</span></div>
+                <div class="tl-content holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="tl-time">12–24 Months</span>
+                    <h4>Kernel Augmentation</h4>
+                    <p>LLM-driven eBPF scheduling (SchedCP) and limited hardware unified memory pooling (HMM) on existing server architectures.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-phase="2">
+                <div class="tl-marker"><span class="tl-phase">Phase 2</span></div>
+                <div class="tl-content holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="tl-time">24–36 Months</span>
+                    <h4>HUC Silicon Tape-Out</h4>
+                    <p>Manufacturing of chips with true Unified Physical Memory (UPM) and AI-first Virtual Neuron Instruction Set.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-phase="3">
+                <div class="tl-marker"><span class="tl-phase">Phase 3</span></div>
+                <div class="tl-content holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="tl-time">36–48 Months</span>
+                    <h4>Xcera Beta Release</h4>
+                    <p>Full Xcera stack deployment. STOICHEION governance firmware in BIOS. Multi-model routing enabled natively.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-phase="4">
+                <div class="tl-marker"><span class="tl-phase">Phase 4</span></div>
+                <div class="tl-content holographic-card" data-magnetic>
+                    <div class="holo-shimmer"></div>
+                    <span class="tl-time">48+ Months</span>
+                    <h4>The AI-Native Paradigm</h4>
+                    <p>Widespread consumer adoption. Legacy operating systems deprecated in favor of intent-driven, agentic ecosystems.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Vision -->
+        <div class="future-vision" data-scroll-anim="scale-in">
+            <div class="vision-card holographic-card">
+                <div class="holo-shimmer"></div>
+                <h3>The Post-Application Computing Era</h3>
+                <p>Users will no longer download static software. They will articulate goals, and the OS will dynamically assemble <strong>ephemeral micro-agents</strong> and generate customized user interfaces on the fly. The boundary between local and cloud dissolves into a seamless computing continuum — anchored within the immutable governance of silicon.</p>
+                <div class="vision-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="brand-icon">⬡</span>
+                <span class="brand-text">XCERA</span>
+            </div>
+            <p class="footer-tagline">The Next-Generation Paradigm — Where Intent Replaces Commands</p>
+            <div class="footer-links">
+                <span>HUC Architecture</span>
+                <span>•</span>
+                <span>Agentic OS</span>
+                <span>•</span>
+                <span>STOICHEION Governance</span>
+                <span>•</span>
+                <span>AI-Native Computing</span>
+            </div>
+            <p class="footer-copy">© 2026 Xcera Project. Heterogeneous Unified Computing.</p>
+        </div>
+    </footer>
+
+    <!-- CDN Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+/**
+ * ================================================================
+ * XCERA OS — ULTRA ADVANCED CINEMATIC INTERFACE
+ * Script: Three.js Neural Network, GSAP Scroll Animations,
+ *         AI Cursor System, Physics-Based Motion
+ * ================================================================
+ */
+
+// ============================================================
+// 1. THREE.JS — 3D NEURAL NETWORK VISUALIZATION
+// ============================================================
+(function initNeuralNetwork() {
+    const canvas = document.getElementById('neural-canvas');
+    if (!canvas || typeof THREE === 'undefined') return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 50;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Cap for performance
+
+    // ---- Neural Nodes ----
+    const nodeCount = 80;
+    const nodeGeometry = new THREE.SphereGeometry(0.15, 8, 8);
+    const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x00d4ff, transparent: true, opacity: 0.6 });
+    const nodes = [];
+    const nodeGroup = new THREE.Group();
+
+    for (let i = 0; i < nodeCount; i++) {
+        const mesh = new THREE.Mesh(nodeGeometry, nodeMaterial.clone());
+        mesh.position.set(
+            (Math.random() - 0.5) * 80,
+            (Math.random() - 0.5) * 50,
+            (Math.random() - 0.5) * 40
+        );
+        // Store velocity for physics
+        mesh.userData = {
+            vel: new THREE.Vector3(
+                (Math.random() - 0.5) * 0.02,
+                (Math.random() - 0.5) * 0.02,
+                (Math.random() - 0.5) * 0.01
+            ),
+            baseOpacity: 0.3 + Math.random() * 0.5,
+            pulseSpeed: 0.5 + Math.random() * 1.5,
+            pulseOffset: Math.random() * Math.PI * 2
+        };
+        nodeGroup.add(mesh);
+        nodes.push(mesh);
+    }
+    scene.add(nodeGroup);
+
+    // ---- Neural Connections (Lines) ----
+    const connectionDistance = 18;
+    const lineMaterial = new THREE.LineBasicMaterial({
+        color: 0x00d4ff, transparent: true, opacity: 0.06
+    });
+    const connectionGroup = new THREE.Group();
+    scene.add(connectionGroup);
+
+    // ---- Pulse particles traveling along connections ----
+    const pulseGeometry = new THREE.SphereGeometry(0.08, 4, 4);
+    const pulseMaterial = new THREE.MeshBasicMaterial({ color: 0xa855f7, transparent: true, opacity: 0.8 });
+    const pulses = [];
+    const maxPulses = 15;
+
+    function createPulse(startNode, endNode) {
+        if (pulses.length >= maxPulses) return;
+        const mesh = new THREE.Mesh(pulseGeometry, pulseMaterial.clone());
+        mesh.userData = {
+            start: startNode.position.clone(),
+            end: endNode.position.clone(),
+            progress: 0,
+            speed: 0.005 + Math.random() * 0.01
+        };
+        scene.add(mesh);
+        pulses.push(mesh);
+    }
+
+    // Mouse interaction for Three.js
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        mouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    // Animation loop for Three.js
+    let frameCount = 0;
+    function animateNeural() {
+        requestAnimationFrame(animateNeural);
+        frameCount++;
+
+        const time = performance.now() * 0.001;
+
+        // Rotate scene gently based on mouse
+        nodeGroup.rotation.y += (mouseX * 0.1 - nodeGroup.rotation.y) * 0.02;
+        nodeGroup.rotation.x += (mouseY * 0.05 - nodeGroup.rotation.x) * 0.02;
+
+        // Update nodes
+        nodes.forEach(node => {
+            // Physics: drift slowly
+            node.position.add(node.userData.vel);
+
+            // Boundary wrapping
+            ['x', 'y', 'z'].forEach(axis => {
+                const limit = axis === 'x' ? 40 : axis === 'y' ? 25 : 20;
+                if (Math.abs(node.position[axis]) > limit) {
+                    node.userData.vel[axis] *= -1;
+                }
+            });
+
+            // Pulse opacity
+            const pulse = Math.sin(time * node.userData.pulseSpeed + node.userData.pulseOffset);
+            node.material.opacity = node.userData.baseOpacity + pulse * 0.2;
+        });
+
+        // Update connections every few frames for performance
+        if (frameCount % 3 === 0) {
+            // Remove old connections
+            while (connectionGroup.children.length > 0) {
+                const child = connectionGroup.children[0];
+                child.geometry.dispose();
+                connectionGroup.remove(child);
+            }
+
+            // Draw new connections
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dist = nodes[i].position.distanceTo(nodes[j].position);
+                    if (dist < connectionDistance) {
+                        const geometry = new THREE.BufferGeometry().setFromPoints([
+                            nodes[i].position, nodes[j].position
+                        ]);
+                        const mat = lineMaterial.clone();
+                        mat.opacity = 0.06 * (1 - dist / connectionDistance);
+                        const line = new THREE.Line(geometry, mat);
+                        connectionGroup.add(line);
+
+                        // Occasionally spawn pulses
+                        if (Math.random() < 0.001) createPulse(nodes[i], nodes[j]);
+                    }
+                }
+            }
+        }
+
+        // Update pulses
+        for (let i = pulses.length - 1; i >= 0; i--) {
+            const p = pulses[i];
+            p.userData.progress += p.userData.speed;
+            if (p.userData.progress >= 1) {
+                scene.remove(p);
+                p.geometry.dispose();
+                p.material.dispose();
+                pulses.splice(i, 1);
+            } else {
+                p.position.lerpVectors(p.userData.start, p.userData.end, p.userData.progress);
+            }
+        }
+
+        renderer.render(scene, camera);
+    }
+    animateNeural();
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+})();
+
+
+// ============================================================
+// 2. AI CURSOR SYSTEM — Magnetic, Energy Trail, Context-Aware
+// ============================================================
+(function initAICursor() {
+    const cursor = document.getElementById('ai-cursor');
+    const trailCanvas = document.getElementById('cursor-trail-canvas');
+    if (!cursor || !trailCanvas) return;
+
+    // Skip custom cursor on mobile
+    if (window.matchMedia('(max-width: 768px)').matches) return;
+
+    const trailCtx = trailCanvas.getContext('2d');
+    let cursorX = 0, cursorY = 0;
+    let targetX = 0, targetY = 0;
+    const trail = [];
+    const maxTrailLength = 20;
+
+    function resizeTrailCanvas() {
+        trailCanvas.width = window.innerWidth;
+        trailCanvas.height = window.innerHeight;
+    }
+    resizeTrailCanvas();
+    window.addEventListener('resize', resizeTrailCanvas);
+
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+    });
+
+    // Hover detection for interactive elements
+    const interactiveSelectors = 'a, button, [data-magnetic], .nav-link, .btn-primary, .btn-secondary, .chip, .carousel-btn, .dot, .stack-layer, .register';
+
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(interactiveSelectors)) {
+            document.body.classList.add('cursor-hover');
+        }
+    });
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(interactiveSelectors)) {
+            document.body.classList.remove('cursor-hover');
+        }
+    });
+
+    // Click effect
+    document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
+    document.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
+
+    // Magnetic hover effect for [data-magnetic] elements
+    document.querySelectorAll('[data-magnetic]').forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = e.clientX - cx;
+            const dy = e.clientY - cy;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            const maxDist = Math.max(rect.width, rect.height);
+
+            if (dist < maxDist) {
+                const pull = 0.15;
+                el.style.transform = `translate(${dx * pull}px, ${dy * pull}px)`;
+            }
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = '';
+        });
+    });
+
+    // Smooth cursor animation + energy trail rendering
+    function animateCursor() {
+        // Spring physics for cursor position
+        const springFactor = 0.12;
+        const dx = targetX - cursorX;
+        const dy = targetY - cursorY;
+        cursorX += dx * springFactor;
+        cursorY += dy * springFactor;
+
+        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+
+        // Energy trail
+        trail.push({ x: cursorX, y: cursorY, life: 1 });
+        if (trail.length > maxTrailLength) trail.shift();
+
+        // Draw trail
+        trailCtx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
+        for (let i = 0; i < trail.length - 1; i++) {
+            const p = trail[i];
+            const next = trail[i + 1];
+            p.life -= 0.05;
+            if (p.life <= 0) continue;
+
+            trailCtx.beginPath();
+            trailCtx.moveTo(p.x, p.y);
+            trailCtx.lineTo(next.x, next.y);
+            trailCtx.strokeStyle = `rgba(0, 212, 255, ${p.life * 0.15})`;
+            trailCtx.lineWidth = p.life * 2;
+            trailCtx.stroke();
+        }
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+})();
+
+
+// ============================================================
+// 3. SCROLL ANIMATIONS — GSAP ScrollTrigger + CSS Class Toggle
+//    Using class-based reveals to avoid transform conflicts with
+//    holographic card hover effects
+// ============================================================
+(function initScrollAnimations() {
+    // Add CSS for scroll animation states
+    const animStyles = document.createElement('style');
+    animStyles.textContent = `
+        .scroll-hidden { opacity: 0; transform: translateY(40px); }
+        .scroll-hidden-scale { opacity: 0; transform: scale(0.92); }
+        .scroll-hidden-left { opacity: 0; transform: translateX(-30px); }
+        .scroll-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        .scroll-visible-scale {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+        }
+        .scroll-visible-left {
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+        }
+        .scroll-hidden, .scroll-hidden-scale, .scroll-hidden-left {
+            transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1),
+                        transform 0.9s cubic-bezier(0.16,1,0.3,1);
+        }
+        /* Stagger delays for children */
+        .stagger-child { opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+                        transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+        .stagger-child.scroll-visible { opacity: 1 !important; transform: translateY(0) !important; }
+    `;
+    document.head.appendChild(animStyles);
+
+    // ---- Apply hidden states ----
+    document.querySelectorAll('[data-scroll-anim="fade-up"]').forEach(el => {
+        el.classList.add('scroll-hidden');
+    });
+    document.querySelectorAll('[data-scroll-anim="scale-in"]').forEach(el => {
+        el.classList.add('scroll-hidden-scale');
+    });
+    document.querySelectorAll('[data-scroll-anim="stagger-up"]').forEach(container => {
+        Array.from(container.children).forEach((child, i) => {
+            child.classList.add('stagger-child');
+            child.style.transitionDelay = (i * 0.08) + 's';
+        });
+    });
+    document.querySelectorAll('[data-anim="row"]').forEach((row, i) => {
+        row.classList.add('scroll-hidden-left');
+        row.style.transitionDelay = (i * 0.06) + 's';
+    });
+
+    // ---- Use GSAP ScrollTrigger if available, else IntersectionObserver ----
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero parallax (these are gsap.to, not from — safe)
+        gsap.to('.hero-bg-grid', {
+            scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1 },
+            y: 100, opacity: 0, ease: 'none'
+        });
+        gsap.to('.hero-ambient-glow', {
+            scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1 },
+            y: 150, scale: 0.8, opacity: 0, ease: 'none'
+        });
+
+        // Volumetric light parallax
+        gsap.to('.vl-1', {
+            scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 2 },
+            y: 300, ease: 'none'
+        });
+        gsap.to('.vl-2', {
+            scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 3 },
+            y: -200, ease: 'none'
+        });
+
+        // Floating orbs parallax
+        document.querySelectorAll('.floating-orb').forEach((orb, i) => {
+            gsap.to(orb, {
+                scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 1 + i },
+                y: 200 * (i + 1), ease: 'none'
+            });
+        });
+
+        // ---- Reveal triggers using class toggle ----
+        document.querySelectorAll('.scroll-hidden').forEach(el => {
+            ScrollTrigger.create({
+                trigger: el, start: 'top 88%', once: true,
+                onEnter: () => el.classList.add('scroll-visible')
+            });
+        });
+        document.querySelectorAll('.scroll-hidden-scale').forEach(el => {
+            ScrollTrigger.create({
+                trigger: el, start: 'top 88%', once: true,
+                onEnter: () => el.classList.add('scroll-visible-scale')
+            });
+        });
+        document.querySelectorAll('.scroll-hidden-left').forEach(el => {
+            ScrollTrigger.create({
+                trigger: el, start: 'top 92%', once: true,
+                onEnter: () => el.classList.add('scroll-visible-left')
+            });
+        });
+        document.querySelectorAll('.stagger-child').forEach(child => {
+            ScrollTrigger.create({
+                trigger: child, start: 'top 90%', once: true,
+                onEnter: () => child.classList.add('scroll-visible')
+            });
+        });
+
+        // Metric rings
+        ScrollTrigger.create({
+            trigger: '#performance', start: 'top 70%', once: true,
+            onEnter: animateRings
+        });
+        // Memory fill bars
+        ScrollTrigger.create({
+            trigger: '.memory-grid', start: 'top 75%', once: true,
+            onEnter: () => {
+                document.querySelectorAll('.memory-fill').forEach(fill => {
+                    fill.style.width = '100%';
+                });
+            }
+        });
+        // Hero stat counters
+        ScrollTrigger.create({
+            trigger: '#hero', start: 'top 50%', once: true,
+            onEnter: animateCounters
+        });
+
+    } else {
+        // ---- Fallback: IntersectionObserver ----
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    if (el.classList.contains('scroll-hidden')) el.classList.add('scroll-visible');
+                    if (el.classList.contains('scroll-hidden-scale')) el.classList.add('scroll-visible-scale');
+                    if (el.classList.contains('scroll-hidden-left')) el.classList.add('scroll-visible-left');
+                    if (el.classList.contains('stagger-child')) el.classList.add('scroll-visible');
+                    if (el.id === 'hero') animateCounters();
+                    if (el.querySelector('.metric-ring')) animateRings();
+                    if (el.querySelector('.memory-fill')) {
+                        el.querySelectorAll('.memory-fill').forEach(f => f.style.width = '100%');
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-hidden, .scroll-hidden-scale, .scroll-hidden-left, .stagger-child, .section').forEach(el => {
+            observer.observe(el);
+        });
+    }
+})();
+
+// ============================================================
+// 5. NAVIGATION
+// ============================================================
+(function initNavigation() {
+    const nav = document.getElementById('main-nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+    let lastScroll = 0;
+
+    // Smooth hide/show nav on scroll
+    window.addEventListener('scroll', () => {
+        const curr = window.scrollY;
+        nav.classList.toggle('hidden', curr > lastScroll && curr > 100);
+        lastScroll = curr;
+
+        // Active section tracking
+        let current = '';
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id');
+        });
+        navLinks.forEach(l => {
+            l.classList.toggle('active', l.getAttribute('data-section') === current);
+        });
+    });
+
+    // Smooth scroll navigation
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+})();
+
+
+// ============================================================
+// 6. STAT COUNTER ANIMATION (Physics-based easing)
+// ============================================================
+function animateCounters() {
+    document.querySelectorAll('.stat-value').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        if (isNaN(target)) return;
+        const duration = 2000;
+        const start = performance.now();
+        function step(ts) {
+            const progress = Math.min((ts - start) / duration, 1);
+            // Expo out easing
+            const eased = 1 - Math.pow(1 - progress, 4);
+            el.textContent = Math.round(target * eased);
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    });
+}
+
+
+// ============================================================
+// 7. METRIC RINGS ANIMATION
+// ============================================================
+function animateRings() {
+    document.querySelectorAll('.metric-ring').forEach(ring => {
+        const pct = parseInt(ring.dataset.percent);
+        const circle = ring.querySelector('.ring-fill');
+        if (!circle) return;
+        const circumference = 2 * Math.PI * 54;
+        const normalizedPct = Math.min(pct, 100);
+        const offset = circumference - (normalizedPct / 100) * circumference;
+        circle.style.strokeDasharray = circumference;
+        // Slight delay for cinematic effect
+        requestAnimationFrame(() => {
+            circle.style.strokeDashoffset = offset;
+        });
+    });
+}
+
+
+// ============================================================
+// 8. OS STACK — Expandable Layers with Morph
+// ============================================================
+(function initStackLayers() {
+    document.querySelectorAll('.stack-layer').forEach(layer => {
+        layer.addEventListener('click', () => {
+            const wasExpanded = layer.classList.contains('expanded');
+            document.querySelectorAll('.stack-layer').forEach(l => l.classList.remove('expanded'));
+            if (!wasExpanded) layer.classList.add('expanded');
+        });
+    });
+})();
+
+
+// ============================================================
+// 9. USE CASE CAROUSEL
+// ============================================================
+(function initCarousel() {
+    const ucCards = document.querySelectorAll('.usecase-card');
+    const ucDots = document.querySelectorAll('.carousel-dots .dot');
+    let ucIndex = 0;
+
+    function showUseCase(idx) {
+        ucCards.forEach(c => c.classList.remove('active'));
+        ucDots.forEach(d => d.classList.remove('active'));
+        if (ucCards[idx]) ucCards[idx].classList.add('active');
+        if (ucDots[idx]) ucDots[idx].classList.add('active');
+        ucIndex = idx;
+    }
+
+    document.getElementById('uc-next')?.addEventListener('click', () => {
+        showUseCase((ucIndex + 1) % ucCards.length);
+    });
+    document.getElementById('uc-prev')?.addEventListener('click', () => {
+        showUseCase((ucIndex - 1 + ucCards.length) % ucCards.length);
+    });
+    ucDots.forEach(dot => {
+        dot.addEventListener('click', () => showUseCase(parseInt(dot.dataset.index)));
+    });
+
+    // Auto-rotate
+    setInterval(() => showUseCase((ucIndex + 1) % ucCards.length), 6000);
+})();
+
+
+// ============================================================
+// 10. ROUTING ENGINE — Animated AI Decision Flow
+// ============================================================
+(function initRouting() {
+    const routingPrompts = [
+        { text: '"Set an alarm for 7 AM"', target: 'local' },
+        { text: '"Analyze this 200-page contract"', target: 'cloud' },
+        { text: '"Generate a test suite for auth module"', target: 'reasoning' },
+        { text: '"What\'s the weather?"', target: 'local' },
+        { text: '"Rewrite this code to use async/await"', target: 'reasoning' },
+        { text: '"Summarize all Q3 reports across divisions"', target: 'cloud' }
+    ];
+
+    let rpIndex = 0;
+    const rpEl = document.getElementById('routing-prompt');
+    if (!rpEl) return;
+
+    // Typing effect
+    function typeText(element, text, callback) {
+        element.textContent = '';
+        let i = 0;
+        const interval = setInterval(() => {
+            element.textContent += text[i];
+            i++;
+            if (i >= text.length) {
+                clearInterval(interval);
+                if (callback) setTimeout(callback, 800);
+            }
+        }, 30);
+    }
+
+    function cycleRouting() {
+        const prompt = routingPrompts[rpIndex];
+
+        // Fade out
+        rpEl.style.opacity = '0';
+        setTimeout(() => {
+            // Reset all paths
+            document.querySelectorAll('.route-path').forEach(p => {
+                p.style.borderColor = '';
+                p.style.boxShadow = '';
+            });
+
+            rpEl.style.opacity = '1';
+            typeText(rpEl, prompt.text, () => {
+                // Highlight target route with glow
+                const targetId = {
+                    local: 'route-local',
+                    reasoning: 'route-reasoning',
+                    cloud: 'route-cloud'
+                }[prompt.target];
+
+                const el = document.getElementById(targetId);
+                if (el) {
+                    el.style.borderColor = 'rgba(0,212,255,0.3)';
+                    el.style.boxShadow = '0 0 20px rgba(0,212,255,0.05)';
+                }
+            });
+
+            rpIndex = (rpIndex + 1) % routingPrompts.length;
+        }, 300);
+    }
+
+    rpEl.style.transition = 'opacity 0.3s';
+    setInterval(cycleRouting, 4000);
+    setTimeout(cycleRouting, 1500);
+})();
+
+
+// ============================================================
+// 11. AUTOMATION DEMO — Step Cycling
+// ============================================================
+(function initAutomationDemo() {
+    const demoSteps = document.querySelectorAll('.info-step');
+    if (!demoSteps.length) return;
+    let demoIndex = 0;
+
+    setInterval(() => {
+        demoSteps.forEach(s => s.classList.remove('active'));
+        demoSteps[demoIndex].classList.add('active');
+        demoIndex = (demoIndex + 1) % demoSteps.length;
+    }, 3000);
+})();
+
+
+// ============================================================
+// 12. BOOT SEQUENCE ANIMATION
+// ============================================================
+(function initBootSequence() {
+    const bootSteps = document.querySelectorAll('.boot-step');
+    if (!bootSteps.length) return;
+    let bootIdx = 0;
+
+    function animateBoot() {
+        bootSteps.forEach((s, i) => {
+            if (i <= bootIdx) {
+                s.style.opacity = '1';
+                s.style.transform = 'translateX(6px)';
+                s.style.borderColor = 'rgba(0,212,255,0.15)';
+            } else {
+                s.style.opacity = '0.3';
+                s.style.transform = 'translateX(0)';
+                s.style.borderColor = '';
+            }
+        });
+        bootIdx = (bootIdx + 1) % (bootSteps.length + 1);
+        if (bootIdx === 0) {
+            setTimeout(() => {
+                bootSteps.forEach(s => {
+                    s.style.opacity = '0.3';
+                    s.style.transform = '';
+                    s.style.borderColor = '';
+                });
+            }, 800);
+        }
+    }
+    setInterval(animateBoot, 1200);
+})();
+
+
+// ============================================================
+// 13. TIMELINE ITEMS — Scroll Animation (class-based)
+// ============================================================
+(function initTimeline() {
+    const tlItems = document.querySelectorAll('.timeline-item');
+    if (!tlItems.length) return;
+
+    // Apply hidden state
+    tlItems.forEach((item, i) => {
+        item.classList.add('scroll-hidden-left');
+        item.style.transitionDelay = (i * 0.1) + 's';
+    });
+
+    // Use ScrollTrigger or IntersectionObserver
+    if (typeof ScrollTrigger !== 'undefined') {
+        tlItems.forEach(item => {
+            ScrollTrigger.create({
+                trigger: item, start: 'top 88%', once: true,
+                onEnter: () => item.classList.add('scroll-visible-left')
+            });
+        });
+    } else {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-visible-left');
+                }
+            });
+        }, { threshold: 0.15 });
+        tlItems.forEach(item => observer.observe(item));
+    }
+})();
+
+
+// ============================================================
+// 14. HOLOGRAPHIC CARD — Dynamic Light Following
+//     Only changes background gradient (not transform, to avoid
+//     conflicting with scroll animation classes)
+// ============================================================
+(function initHoloCards() {
+    document.querySelectorAll('.holographic-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Light following effect only (no transform to avoid conflicts)
+            card.style.background = `
+                radial-gradient(circle at ${x}px ${y}px, rgba(0,212,255,0.05), transparent 50%),
+                var(--glass)
+            `;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.background = '';
+        });
+    });
+})();
+
+
+// ============================================================
+// 15. PARALLAX BACKGROUND LAYERS
+// ============================================================
+(function initParallax() {
+    const layers = document.querySelectorAll('.parallax-layer');
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        layers.forEach(layer => {
+            const speed = parseFloat(layer.dataset.speed) || 0.05;
+            layer.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
+        });
+    });
+})();
+
+
+// ============================================================
+// 16. DATA FLOW CANVAS (Architecture section)
+// ============================================================
+(function initDataFlowCanvas() {
+    const canvas = document.getElementById('data-flow-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = 320;
+    canvas.height = 320;
+
+    const particles = [];
+    const particleCount = 12;
+
+    for (let i = 0; i < particleCount; i++) {
+        particles.push({
+            angle: (Math.PI * 2 * i) / particleCount,
+            radius: 60 + Math.random() * 40,
+            speed: 0.005 + Math.random() * 0.01,
+            size: 1.5 + Math.random() * 1.5,
+            opacity: 0.3 + Math.random() * 0.5,
+            hue: Math.random() > 0.5 ? 190 : 270
+        });
+    }
+
+    function animateDataFlow() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2;
+
+        particles.forEach(p => {
+            p.angle += p.speed;
+            const x = cx + Math.cos(p.angle) * p.radius;
+            const y = cy + Math.sin(p.angle) * p.radius;
+
+            ctx.beginPath();
+            ctx.arc(x, y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `hsla(${p.hue}, 80%, 65%, ${p.opacity})`;
+            ctx.fill();
+
+            // Trail
+            ctx.beginPath();
+            ctx.arc(
+                cx + Math.cos(p.angle - 0.2) * p.radius,
+                cy + Math.sin(p.angle - 0.2) * p.radius,
+                p.size * 0.6, 0, Math.PI * 2
+            );
+            ctx.fillStyle = `hsla(${p.hue}, 80%, 65%, ${p.opacity * 0.3})`;
+            ctx.fill();
+        });
+
+        requestAnimationFrame(animateDataFlow);
+    }
+    animateDataFlow();
+})();
+
+
+// ============================================================
+// 17. REGISTER HOVER EFFECTS
+// ============================================================
+(function initRegisterEffects() {
+    document.querySelectorAll('.register').forEach(reg => {
+        reg.addEventListener('mouseenter', () => {
+            reg.style.boxShadow = '0 0 25px rgba(0,212,255,0.08)';
+        });
+        reg.addEventListener('mouseleave', () => {
+            reg.style.boxShadow = '';
+        });
+    });
+})();
+
+
+// ============================================================
+// 18. CHALLENGE SEVERITY BARS — Scroll trigger
+// ============================================================
+(function initSeverityBars() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const fill = entry.target.querySelector('.sev-fill');
+                if (fill) fill.style.transition = 'width 2s cubic-bezier(0.16,1,0.3,1)';
+            }
+        });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.challenge-card').forEach(c => observer.observe(c));
+})();
+
+
+// ============================================================
+// 19. AI "THINKING" AMBIENT EFFECTS
+// ============================================================
+(function initAIAmbience() {
+    // Periodically add subtle "processing" indicators to section headers
+    const sectionNumbers = document.querySelectorAll('.section-number');
+
+    setInterval(() => {
+        sectionNumbers.forEach(num => {
+            if (Math.random() > 0.7) {
+                num.style.textShadow = '0 0 15px var(--cyan)';
+                setTimeout(() => {
+                    num.style.textShadow = '';
+                }, 500);
+            }
+        });
+    }, 3000);
+})();
+
+
+// ============================================================
+// 20. OPTIONAL: QUANT BAR ANIMATION
+// ============================================================
+(function initQuantBars() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.qbar-segment').forEach((seg, i) => {
+                    seg.style.transitionDelay = (i * 0.2) + 's';
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+    const qv = document.querySelector('.quant-visual');
+    if (qv) observer.observe(qv);
+})();
+
+
+// ============================================================
+// CONSOLE SIGNATURE
+// ============================================================
+console.log(
+    '%c XCERA OS ',
+    'background:linear-gradient(135deg,#00d4ff,#a855f7);color:#030712;font-size:20px;font-weight:bold;padding:10px 20px;border-radius:8px;'
+);
+console.log(
+    '%c AI-Native Interface — Ultra Advanced Cinematic Edition ',
+    'color:#64748b;font-size:12px;'
+);
+    </script>
+</body>
+</html>
